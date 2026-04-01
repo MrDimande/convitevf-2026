@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="pt-MZ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vânia & Fabião | Convite de Casamento</title>
+    <meta
+      name="description"
+      content="Convite de casamento de Vânia e Fabião — 09 de Maio de 2026, Maputo. Celebra connosco este dia especial."
+    />
+    <meta property="og:title" content="Vânia & Fabião | Convite de Casamento" />
+    <meta
+      property="og:description"
+      content="09 de Maio de 2026 — celebra connosco este dia em Maputo."
+    />
+    <meta property="og:type" content="website" />
+    <!-- Ao publicares: substitui o URL abaixo pelo link absoluto da imagem (og:image não pode ser relativo nas redes sociais). -->
+    <meta property="og:image" content="https://example.com/images/foto.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#1a1a1a" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='35%25' cy='30%25'%3E%3Cstop offset='0' stop-color='%23F7E7CE'/%3E%3Cstop offset='1' stop-color='%23D4AF37'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='14' fill='%231a1a1a'/%3E%3Cpath d='M32 48s-14-8.6-20-18.6C7 20.5 13 14 20.5 14c4.3 0 8.2 2.2 10.5 5.6C33.3 16.2 37.2 14 41.5 14 49 14 55 20.5 52 29.4 46 39.4 32 48 32 48z' fill='url(%23g)'/%3E%3C/svg%3E"
+    />
+    <link
+      rel="preload"
+      href="images/intro-hero.png"
+      as="image"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@200;300;400;500;600;700&family=Philosopher:wght@400;700&family=Playfair+Display:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  </head>
+  <body>
+    <a
+      class="back-to-cover"
+      href="capa.html"
+      aria-label="Voltar à capa do convite"
+      ><span class="back-to-cover__glyph" aria-hidden="true">‹</span> Voltar à
+      capa</a
+    >
+    <button
+      type="button"
+      class="audio-toggle"
+      id="audioToggle"
+      aria-label="Tocar ou pausar música"
+    >
+      <i data-lucide="play" class="audio-toggle__icon" aria-hidden="true"></i>
+    </button>
+    <audio id="bgMusic" loop>
+      <source src="audio/teeks-first-time.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Partículas Douradas Animadas -->
+    <div class="golden-particles-container" id="goldenParticles"></div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Floating Hearts Container -->
+    <div class="floating-hearts-container" id="floatingHearts"></div>
+
+    <!-- Sparkle Effects Container -->
+    <div class="sparkle-container" id="sparkleContainer"></div>
+
+    <main>
+      <!-- SEGUNDA CAPA / INTRO -->
+      <section
+        id="intro"
+        class="hero hero-intro"
+        aria-labelledby="intro-heading"
+      >
+        <div class="hero-intro__film" aria-hidden="true"></div>
+        <div class="hero-intro__vignette" aria-hidden="true"></div>
+        <div class="hero-content hero-content--intro container">
+          <div class="hero-intro__copy">
+            <p class="eyebrow">O casamento de</p>
+            <h1 class="names names--display names--lockup" id="intro-heading">
+              <span class="names__inner">
+                <span class="names__part">Vânia</span>
+                <span class="names__amp">&amp;</span>
+                <span class="names__part">Fabião</span>
+              </span>
+            </h1>
+            <p class="date">09&nbsp;•&nbsp;05&nbsp;•&nbsp;2026</p>
+          </div>
+          <a
+            href="#convite"
+            class="hero-intro__scroll"
+            aria-label="Descer para continuar a ler o convite"
+          >
+            <span class="hero-intro__scroll-chevrons" aria-hidden="true">
+              <svg
+                class="hero-intro__chev"
+                width="22"
+                height="14"
+                viewBox="0 0 20 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+              >
+                <path
+                  d="M1.5 2.5L10 9.5 18.5 2.5"
+                  stroke="currentColor"
+                  stroke-width="1.35"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <svg
+                class="hero-intro__chev hero-intro__chev--2"
+                width="22"
+                height="14"
+                viewBox="0 0 20 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                focusable="false"
+              >
+                <path
+                  d="M1.5 2.5L10 9.5 18.5 2.5"
+                  stroke="currentColor"
+                  stroke-width="1.35"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </span>
+          </a>
+        </div>
+      </section>
+
+      <section
+        class="quote-section"
+        id="convite"
+        aria-labelledby="quote-heading"
+      >
+        <div class="container">
+          <h2 class="script-title" id="quote-heading">Uma só carne...</h2>
+          <p class="quote">
+            Por essa razão, o homem deixará pai e mãe e unir-se-á à sua mulher,
+            e eles se tornarão uma só carne.
+          </p>
+          <div class="quote-ref">Génesis 2:24</div>
+        </div>
+      </section>
+
+      <section class="couple-section" aria-labelledby="noivos-heading">
+        <div class="container">
+          <div class="section-title couple-section__title" id="noivos-heading">
+            Os Noivos
+          </div>
+          <div class="couple-wrap">
+            <div class="couple-wrap__inner">
+              <div class="couple-grid">
+                <div class="couple-card couple-card--bride">
+                  <h3>Vânia</h3>
+                  <p class="couple-lineage">
+                    Filha de Nelson Manuel
+                    <span class="couple-amp">&amp;</span> Bilda Dos Santos
+                  </p>
+                </div>
+
+                <div class="couple-photo-column">
+                  <figure class="couple-photo">
+                    <img
+                      src="images/foto.jpg"
+                      alt="Vânia e Fabião"
+                      width="1200"
+                      height="1600"
+                      decoding="async"
+                      fetchpriority="high"
+                    />
+                  </figure>
+                </div>
+
+                <div class="couple-card couple-card--groom">
+                  <h3>Fabião</h3>
+                  <p class="couple-lineage">
+                    Filho de Alberto Dimande (em Memória)
+                    <span class="couple-amp">&amp;</span> Henriqueta Sambo
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="love-section" aria-labelledby="love-heading">
+        <div class="container">
+          <div class="section-title">Com amor</div>
+          <h2 class="script-title" id="love-heading">
+            Celebra connosco este dia
+          </h2>
+          <p class="lead">
+            Com a bênção de Deus e a alegria das nossas famílias, convidamos-te
+            para partilhar connosco este momento tão especial.
+          </p>
+
+          <div class="events-grid">
+            <article class="event-card">
+              <div class="event-content">
+                <div class="event-title">Cerimónia Religiosa</div>
+                <div class="event-meta">Sábado, 09 de Maio de 2026</div>
+                <div class="event-meta">10h30</div>
+                <div>Igreja Católica Comunidade São Paulo</div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-content">
+                <div class="event-title">Cerimónia Civil</div>
+                <div class="event-meta">Sábado, 09 de Maio de 2026</div>
+                <div class="event-meta">14h30</div>
+                <div>Salão de Eventos Evelyn</div>
+              </div>
+            </article>
+
+            <article class="event-card">
+              <div class="event-content">
+                <div class="event-title">Copo de Água</div>
+                <div class="event-meta">Sábado, 09 de Maio de 2026</div>
+                <div class="event-meta">15h30</div>
+                <div>Salão de Eventos Evelyn</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="journey" aria-labelledby="journey-heading">
+        <div class="container">
+          <div class="section-title">A nossa jornada começa aqui</div>
+          <h2 class="script-title" id="journey-heading">Esperamos por ti</h2>
+          <p class="lead">
+            Um grande amor merece ser celebrado com as pessoas certas. Ficaremos
+            muito felizes com a tua presença.
+          </p>
+
+          <div class="gallery-grid">
+            <div class="gallery-card">
+              <img
+                src="images/imag.jpg"
+                alt="Foto do casal 1"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+              <span>Sonho</span>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="images/imh.jpg"
+                alt="Foto do casal 2"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+              <span>Amor</span>
+            </div>
+            <div class="gallery-card">
+              <img
+                src="images/principal.jpg"
+                alt="Foto do casal 3"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+              <span>Felicidade</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="location-section" aria-labelledby="location-heading">
+        <div class="container">
+          <div class="section-title">Localização</div>
+          <h2 class="script-title" id="location-heading">
+            Onde a magia acontece
+          </h2>
+          <p class="lead">
+            No Salão de Eventos Evelyn celebramos o nosso amor — esperamos por
+            ti em KaMavota, Albazine.
+          </p>
+
+          <div class="location-grid">
+            <div class="location-info">
+              <div class="venue-card venue-card--premium">
+                <div class="venue-header">
+                  <h3>Salão de Eventos Evelyn</h3>
+                </div>
+
+                <div class="venue-details venue-details--essential">
+                  <div class="detail-item">
+                    <i data-lucide="map-pin" class="icon"></i>
+                    <div>
+                      <p class="venue-address-lines">
+                        KaMavota, Bairro Albazine<br />Maputo
+                      </p>
+                      <p class="venue-schedule" role="note">
+                        Horários no salão: cerimónia civil 14h30 · copo de água
+                        15h30
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="navigation-buttons">
+                  <button
+                    type="button"
+                    class="nav-btn google-maps"
+                    onclick="openGoogleMaps()"
+                  >
+                    <i data-lucide="map" class="nav-icon"></i> Google Maps
+                  </button>
+                  <button
+                    type="button"
+                    class="nav-btn waze"
+                    onclick="openWaze()"
+                  >
+                    <i data-lucide="navigation" class="nav-icon"></i> Waze
+                  </button>
+                  <button
+                    type="button"
+                    class="nav-btn directions"
+                    onclick="getDirections()"
+                  >
+                    <i data-lucide="map-pin" class="nav-icon"></i> Obter
+                    direções
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="location-map">
+              <div class="map-container">
+                <div id="map" class="map-placeholder">
+                  <div class="map-loading">
+                    <div class="loading-spinner"></div>
+                    <p>Carregando mapa...</p>
+                  </div>
+                </div>
+
+                <div class="map-controls">
+                  <button
+                    type="button"
+                    class="map-btn"
+                    onclick="zoomIn()"
+                    aria-label="Aumentar zoom do mapa"
+                  >
+                    +
+                  </button>
+                  <button
+                    type="button"
+                    class="map-btn"
+                    onclick="zoomOut()"
+                    aria-label="Diminuir zoom do mapa"
+                  >
+                    -
+                  </button>
+                  <button
+                    type="button"
+                    class="map-btn"
+                    onclick="resetMap()"
+                    aria-label="Repor zoom do mapa"
+                  >
+                    ⟲
+                  </button>
+                  <button
+                    type="button"
+                    class="map-btn"
+                    onclick="toggleFullscreen()"
+                    aria-label="Mapa em ecrã inteiro"
+                  >
+                    ⛶
+                  </button>
+                </div>
+              </div>
+
+              <div class="map-info">
+                <div class="info-item">
+                  <span class="info-label">Distância do Centro</span>
+                  <span class="info-value">3.5 km</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Tempo Médio</span>
+                  <span class="info-value">15 min</span>
+                </div>
+                <div class="info-item">
+                  <span class="info-label">Zona</span>
+                  <span class="info-value">KaMavota · Albazine</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="count-section" aria-labelledby="count-heading">
+        <div class="container">
+          <div class="count-grid">
+            <div class="count-image">
+              <img
+                src="images/imh.jpg"
+                alt="Foto do casal sentados"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+
+            <div class="count-panel">
+              <div class="section-title">Contagem regressiva</div>
+              <h2 class="script-title" id="count-heading">Para o grande dia</h2>
+              <p class="mini-lead">
+                Faltam poucos dias para celebrarmos este momento único. Queremos
+                muito ter-te connosco.
+              </p>
+
+              <div class="count-grid-boxes">
+                <div class="mini-box">
+                  <strong id="days">00</strong>
+                  <span>Dias</span>
+                </div>
+                <div class="mini-box">
+                  <strong id="hours">00</strong>
+                  <span>Horas</span>
+                </div>
+                <div class="mini-box">
+                  <strong id="minutes">00</strong>
+                  <span>Minutos</span>
+                </div>
+                <div class="mini-box">
+                  <strong id="seconds">00</strong>
+                  <span>Segundos</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rsvp-gifts" id="rsvp" aria-labelledby="rsvp-heading">
+        <div class="container">
+          <div class="section-title">Confirmação</div>
+          <h2 class="script-title" id="rsvp-heading">Contamos contigo?</h2>
+          <p class="lead rsvp-lead">
+            Confirma a tua presença até <strong>20 de Abril de 2026</strong>,
+            para podermos preparar este dia com carinho.
+          </p>
+
+          <div class="info-grid rsvp-info-grid">
+            <div class="panel panel--rsvp">
+              <div class="rsvp-card-heading">
+                <h3>
+                  <i
+                    data-lucide="heart"
+                    class="gift-icon"
+                    aria-hidden="true"
+                  ></i>
+                  RSVP
+                </h3>
+                <p class="rsvp-card-subline">
+                  Preferes falar connosco? Usa um dos contactos abaixo. Se não,
+                  o formulário basta.
+                </p>
+              </div>
+
+              <div class="rsvp-main-block">
+                <div
+                  class="rsvp-contact-row"
+                  role="group"
+                  aria-label="Contactos para confirmação"
+                >
+                  <a
+                    href="https://wa.me/258877859121?text=Ol%C3%A1!%20Gostaria%20de%20confirmar%20a%20minha%20presen%C3%A7a%20no%20casamento%20de%20V%C3%A2nia%20e%20Fabi%C3%A3o."
+                    class="phone-btn phone-btn--whatsapp"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Confirmar por WhatsApp"
+                  >
+                    <i
+                      data-lucide="message-circle"
+                      class="btn-icon"
+                      aria-hidden="true"
+                    ></i>
+                    <span class="phone-number">+258 87 785 9121</span>
+                    <span class="phone-label">WhatsApp</span>
+                  </a>
+                  <a
+                    href="tel:+258827539055"
+                    class="phone-btn phone-btn--call"
+                    aria-label="Ligar para confirmar"
+                  >
+                    <i
+                      data-lucide="phone-call"
+                      class="btn-icon"
+                      aria-hidden="true"
+                    ></i>
+                    <span class="phone-number">+258 82 753 9055</span>
+                    <span class="phone-label">Chamada</span>
+                  </a>
+                </div>
+
+                <p class="rsvp-form-label"><span>Formulário</span></p>
+
+                <!-- Email que recebe cada RSVP (FormSubmit). Sobrepõe RSVP_EMAIL_DESTINO em script.js. -->
+                <form
+                  id="rsvp-form"
+                  class="rsvp-form"
+                  novalidate
+                  data-rsvp-endpoint="https://script.google.com/macros/s/AKfycbwzij5VSOhb99QcXqm1ktewJYvbO1hqsPv2IrpXsxES0NZwQcrbVn-XVIJRbL9Qzv5F/exec"
+                >
+                  <div class="form-group">
+                    <label for="nome">Nome e apelido *</label>
+                    <input
+                      id="nome"
+                      name="nome"
+                      type="text"
+                      placeholder="O teu nome completo"
+                      required
+                      autocomplete="name"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="exemplo@email.com"
+                      autocomplete="email"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="telefone">Telemóvel *</label>
+                    <input
+                      id="telefone"
+                      name="telefone"
+                      type="tel"
+                      placeholder="Ex.: +258 84 000 0000"
+                      required
+                      autocomplete="tel"
+                    />
+                  </div>
+
+                  <div class="form-group">
+                    <label for="acompanhantes">Acompanhantes</label>
+                    <select id="acompanhantes" name="acompanhantes">
+                      <option value="0">Só eu</option>
+                      <option value="1">Eu + 1 acompanhante</option>
+                      <option value="2">Eu + 2 acompanhantes</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="presenca">Vens ao nosso dia? *</label>
+                    <select id="presenca" name="presenca" required>
+                      <option value="">Selecciona uma opção</option>
+                      <option value="Sim, com muito gosto">
+                        Sim, com muito gosto
+                      </option>
+                      <option value="Não poderei comparecer">
+                        Não poderei comparecer
+                      </option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="restricoes"
+                      >Restrições alimentares ou alergias</label
+                    >
+                    <textarea
+                      id="restricoes"
+                      name="restricoes"
+                      placeholder="Se aplicável, diz-nos aqui (opcional)"
+                    ></textarea>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="mensagem">Mensagem para nós</label>
+                    <textarea
+                      id="mensagem"
+                      name="mensagem"
+                      placeholder="Uma palavra para Vânia e Fabião (opcional)"
+                    ></textarea>
+                  </div>
+
+                  <button type="submit" class="submit">
+                    Enviar confirmação
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div
+              class="panel gift-box"
+              id="presentes"
+              aria-labelledby="presentes-heading"
+            >
+              <div>
+                <h3 id="presentes-heading">
+                  <i
+                    data-lucide="gift"
+                    class="gift-icon"
+                    aria-hidden="true"
+                  ></i>
+                  Presente de casamento
+                </h3>
+                <p>
+                  A tua presença já é o maior presente. Se quiseres oferecer
+                  algo mais, podes fazê-lo por uma das formas abaixo ou pela
+                  nossa lista online.
+                </p>
+                <div class="presentes-detalhes" id="presentes-detalhes"></div>
+                <button
+                  type="button"
+                  class="btn presentes-lista-btn"
+                  id="openArtigosModal"
+                >
+                  Presentear
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="premium-footer" aria-label="Rodapé do convite">
+        <div class="container premium-footer__inner">
+          <p class="premium-footer__line">
+            FEITO COM AMOR PARA CELEBRAR ESTE DIA INESQUECIVEL.
+          </p>
+          <h3 class="premium-footer__names">
+            Vânia <span aria-hidden="true">&amp;</span> Fabião
+          </h3>
+          <p class="premium-footer__date">09 DE MAIO DE 2026 · MAPUTO</p>
+          <p class="premium-footer__blessing">
+            "Agora permanecem a fé, a esperança e o amor. O maior deles, porém,
+            é o amor."
+          </p>
+          <p class="premium-footer__verse">1 CORINTIOS 13:13</p>
+          <p class="premium-footer__closing">
+            Esperamos por ti para celebrarmos juntos este dia tao especial.
+          </p>
+
+          <div class="premium-footer__credits">
+            <p class="premium-footer__creator-label">Criado por</p>
+            <p class="premium-footer__creator-name">Agencia Criativa 360°</p>
+            <p class="premium-footer__copyright">
+              © 2026 Vania &amp; Fabiao. Todos os direitos reservados.
+            </p>
+            <p class="premium-footer__music">Musica: "First Time" - Teeks</p>
+
+            <div class="premium-footer__signature">
+              <p class="premium-footer__signature-label">Desenvolvido por</p>
+              <img
+                src="images/assinatura.svg"
+                alt="Assinatura de desenvolvimento"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Modal Artigos / Lista de Presentes -->
+    <div class="artigos-modal-overlay" id="artigosModalOverlay">
+      <div
+        class="artigos-modal"
+        role="dialog"
+        aria-labelledby="artigos-modal-title"
+        aria-modal="true"
+      >
+        <button
+          type="button"
+          class="artigos-modal__close"
+          id="closeArtigosModal"
+          aria-label="Fechar"
+        >
+          &times;
+        </button>
+        <h2 class="artigos-modal__title" id="artigos-modal-title">Artigos</h2>
+        <p class="artigos-modal__intro">
+          Quanto aos presentes materiais dispomos de uma lista de artigos
+          especificada. As listas já estão disponíveis nas lojas indicadas
+          abaixo:
+        </p>
+
+        <div class="artigos-modal__store-card">
+          <h3 class="artigos-modal__store-name">Casa das Loiças</h3>
+          <p class="artigos-modal__store-address">
+            Av. Karl Marx Nº 1230A, Cidade de Maputo
+          </p>
+          <p class="artigos-modal__store-phone">843115680</p>
+          <a href="tel:+258843115680" class="artigos-modal__call-btn">Ligar</a>
+        </div>
+
+        <div class="artigos-modal__articles">
+          <h4 class="artigos-modal__articles-title">Lista de Artigos</h4>
+          <ol class="artigos-modal__articles-list">
+            <li>Disponível na Loja.</li>
+          </ol>
+        </div>
+
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Casa+das+Loi%C3%A7as+Av.+Karl+Marx+1230A+Maputo"
+          class="artigos-modal__map-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Ver no Mapa</a
+        >
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
