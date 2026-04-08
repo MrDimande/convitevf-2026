@@ -14,8 +14,7 @@
       content="09 de Maio de 2026 — celebra connosco este dia em Maputo."
     />
     <meta property="og:type" content="website" />
-    <!-- Ao publicares: substitui o URL abaixo pelo link absoluto da imagem (og:image não pode ser relativo nas redes sociais). -->
-    <meta property="og:image" content="https://example.com/images/foto.jpg" />
+    <meta property="og:image" content="https://vaniaefabiao2026.com/images/capa.jpg" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#1a1a1a" />
     <link
@@ -36,6 +35,7 @@
     />
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="https://upload-widget.cloudinary.com/global/all.js"></script>
   </head>
   <body>
     <a
@@ -234,7 +234,7 @@
         </div>
       </section>
 
-      <section class="journey" aria-labelledby="journey-heading">
+      <section class="journey journey--premium" aria-labelledby="journey-heading">
         <div class="container">
           <div class="section-title">A nossa jornada começa aqui</div>
           <h2 class="script-title" id="journey-heading">Esperamos por ti</h2>
@@ -243,8 +243,8 @@
             muito felizes com a tua presença.
           </p>
 
-          <div class="gallery-grid">
-            <div class="gallery-card">
+          <div class="gallery-grid gallery-grid--premium">
+            <div class="gallery-card gallery-card--premium">
               <img
                 src="images/imag.jpg"
                 alt="Foto do casal 1"
@@ -255,7 +255,7 @@
               />
               <span>Sonho</span>
             </div>
-            <div class="gallery-card">
+            <div class="gallery-card gallery-card--premium">
               <img
                 src="images/imh.jpg"
                 alt="Foto do casal 2"
@@ -266,7 +266,7 @@
               />
               <span>Amor</span>
             </div>
-            <div class="gallery-card">
+            <div class="gallery-card gallery-card--premium">
               <img
                 src="images/principal.jpg"
                 alt="Foto do casal 3"
@@ -288,7 +288,7 @@
             Onde a magia acontece
           </h2>
           <p class="lead">
-            No Salão de Eventos Evelyn celebramos o nosso amor — esperamos por
+            No Salão de Eventos Evelyn celebramos o nosso amor esperamos por
             ti em KaMavota, Albazine.
           </p>
 
@@ -460,7 +460,7 @@
           </p>
 
           <div class="info-grid rsvp-info-grid">
-            <div class="panel panel--rsvp">
+            <div class="panel panel--rsvp panel--rsvp-layout">
               <div class="rsvp-card-heading">
                 <h3>
                   <i
@@ -605,239 +605,189 @@
               </div>
             </div>
 
-            <div
-              class="panel gift-box"
-              id="presentes"
-              aria-labelledby="presentes-heading"
-            >
-              <div>
-                <h3 id="presentes-heading">
-                  <i
-                    data-lucide="gift"
-                    class="gift-icon"
-                    aria-hidden="true"
-                  ></i>
-                  Presente de casamento
-                </h3>
-                <p>
-                  A tua presença já é o maior presente. Se quiseres oferecer
-                  algo mais, podes fazê-lo por uma das formas abaixo ou pela
-                  nossa lista online.
-                </p>
-                <div class="presentes-detalhes" id="presentes-detalhes"></div>
-                <button
-                  type="button"
-                  class="btn presentes-lista-btn"
-                  id="openArtigosModal"
-                >
-                  Presentear
-                </button>
-              </div>
-            </div>
-
-            <div
-              class="panel drink-box"
-              id="bebidas"
-              aria-labelledby="bebidas-heading"
-            >
-              <div>
-                <h3 id="bebidas-heading">
-                  <i
-                    data-lucide="wine"
-                    class="drink-icon"
-                    aria-hidden="true"
-                  ></i>
-                  Pedidos de Bebidas
-                </h3>
-                <p>
-                  Para garantir que todos aproveitem a celebração, 
-                  pedimos que nos informem sobre as suas preferências de bebidas.
-                </p>
-                <form id="drinkOrderForm" class="drink-form">
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="drinkName">Nome Completo</label>
-                      <input type="text" id="drinkName" name="drinkName" required>
-                    </div>
-                  </div>
-                  
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label>Preferências de Bebidas</label>
-                      <div class="drink-options">
-                        <label class="drink-checkbox">
-                          <input type="checkbox" name="drinks" value="vinho-tinto">
-                          <span>Vinho Tinto</span>
-                        </label>
-                        <label class="drink-checkbox">
-                          <input type="checkbox" name="drinks" value="vinho-branco">
-                          <span>Vinho Branco</span>
-                        </label>
-                        <label class="drink-checkbox">
-                          <input type="checkbox" name="drinks" value="cerveja">
-                          <span>Cerveja</span>
-                        </label>
-                        <label class="drink-checkbox">
-                          <input type="checkbox" name="drinks" value="espumante">
-                          <span>Espumante</span>
-                        </label>
-                        <label class="drink-checkbox">
-                          <input type="checkbox" name="drinks" value="refrigerante">
-                          <span>Refrigerante</span>
-                        </label>
-                        <label class="drink-checkbox">
-                          <input type="checkbox" name="drinks" value="agua">
-                          <span>Água</span>
-                        </label>
-                        <label class="drink-checkbox">
-                          <input type="checkbox" name="drinks" value="sumo-natural">
-                          <span>Sumo Natural</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="drinkQuantity">Quantidade aproximada por pessoa</label>
-                      <select id="drinkQuantity" name="drinkQuantity">
-                        <option value="1-2">1-2 bebidas</option>
-                        <option value="3-4">3-4 bebidas</option>
-                        <option value="5-6">5-6 bebidas</option>
-                        <option value="mais-6">Mais de 6 bebidas</option>
-                      </select>
-                    </div>
-                  </div>
-
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="drinkRestrictions">Restrições ou Preferências Especiais</label>
-                      <textarea id="drinkRestrictions" name="drinkRestrictions" 
-                                placeholder="Ex: Alergias, preferências sem álcool, etc."></textarea>
-                    </div>
-                  </div>
-
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label>Como prefere enviar?</label>
-                      <div class="contact-options">
-                        <label class="contact-radio">
-                          <input type="radio" name="contactMethod" value="whatsapp" checked>
-                          <i data-lucide="message-circle"></i>
-                          <span>WhatsApp</span>
-                        </label>
-                        <label class="contact-radio">
-                          <input type="radio" name="contactMethod" value="email">
-                          <i data-lucide="mail"></i>
-                          <span>E-mail</span>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="form-row">
-                    <div class="form-group">
-                      <label for="contactInfo">Contato (WhatsApp/E-mail)</label>
-                      <input type="text" id="contactInfo" name="contactInfo" 
-                             placeholder="+258 8X XXX XXXX ou seu@email.com" required>
-                    </div>
-                  </div>
-
-                  <button type="submit" class="submit drink-submit">
-                    <i data-lucide="send"></i>
-                    Enviar Pedido
+            <div class="right-column-stack right-column-stack--layout">
+              <div
+                class="panel gift-box gift-box--premium panel--presentes-layout"
+                id="presentes"
+                aria-labelledby="presentes-heading"
+              >
+                <div>
+                  <h3 id="presentes-heading">
+                    <i
+                      data-lucide="gift"
+                      class="gift-icon"
+                      aria-hidden="true"
+                    ></i>
+                    Presente de casamento
+                  </h3>
+                  <p>
+                    A tua presença já é o maior presente. Se quiseres oferecer
+                    algo mais, podes fazê-lo por uma das formas abaixo ou pela
+                    nossa lista online.
+                  </p>
+                  <div class="presentes-detalhes" id="presentes-detalhes"></div>
+                  <button
+                    type="button"
+                    class="btn presentes-lista-btn"
+                    id="openArtigosModal"
+                  >
+                    Presentear
                   </button>
-                </form>
+                </div>
               </div>
-            </div>
 
-            <div
-              class="panel photo-box"
-              id="fotos"
-              aria-labelledby="fotos-heading"
-            >
-              <div>
-                <h3 id="fotos-heading">
-                  <i
-                    data-lucide="camera"
-                    class="photo-icon"
-                    aria-hidden="true"
-                  ></i>
-                  Galeria de Fotos do Casamento
-                </h3>
-                <p>
-                  Partilhe as suas fotos especiais deste dia! 
-                  Todas as imagens serão compiladas na nossa galeria de memórias.
-                </p>
-                
-                <div class="photo-upload-area" id="photoUploadArea">
+              <!-- Sistema de Pedidos de Bebidas -->
+              <div
+                class="panel drink-box drink-box--premium panel--bebidas-layout"
+                id="bebidas"
+                aria-labelledby="bebidas-heading"
+              >
+                <div>
+                  <h3 id="bebidas-heading">
+                    <i data-lucide="wine" class="drink-icon" aria-hidden="true"></i>
+                    Pedido de Bebidas
+                  </h3>
+                  <p>
+                    Indica as bebidas que preferes para ajudarmos a preparar uma
+                    experiência ainda mais especial.
+                  </p>
+                  <form class="drink-form drink-form--clean" id="drinkForm">
+                    <div class="form-row form-row--two">
+                      <div class="form-group">
+                        <label for="drinkName">Nome</label>
+                        <input
+                          type="text"
+                          id="drinkName"
+                          name="name"
+                          placeholder="O teu nome"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="drinkTable">Mesa</label>
+                        <input
+                          type="text"
+                          id="drinkTable"
+                          name="table"
+                          placeholder="Ex.: Mesa 8"
+                          required
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label>Quais bebidas preferes?</label>
+                        <div id="drinkOptions" class="drink-multiselect" aria-label="Seleciona uma ou mais bebidas">
+                          <button
+                            type="button"
+                            id="drinkOptionsTrigger"
+                            class="drink-multiselect__trigger"
+                            aria-haspopup="listbox"
+                            aria-expanded="false"
+                          >
+                            Selecionar bebidas
+                          </button>
+
+                          <div id="drinkOptionsPanel" class="drink-multiselect__panel" role="listbox" aria-multiselectable="true">
+                            <label class="drink-multiselect__option" role="option" aria-selected="false">
+                              <input type="checkbox" name="drinks" value="cerveja" />
+                              <span>Cerveja</span>
+                            </label>
+                            <label class="drink-multiselect__option" role="option" aria-selected="false">
+                              <input type="checkbox" name="drinks" value="vinho" />
+                              <span>Vinho</span>
+                            </label>
+                            <label class="drink-multiselect__option" role="option" aria-selected="false">
+                              <input type="checkbox" name="drinks" value="whisky" />
+                              <span>Whisky</span>
+                            </label>
+                            <label class="drink-multiselect__option" role="option" aria-selected="false">
+                              <input type="checkbox" name="drinks" value="gin" />
+                              <span>Gin</span>
+                            </label>
+                            <label class="drink-multiselect__option" role="option" aria-selected="false">
+                              <input type="checkbox" name="drinks" value="refrigerante" />
+                              <span>Refrigerante</span>
+                            </label>
+                            <label class="drink-multiselect__option" role="option" aria-selected="false">
+                              <input type="checkbox" name="drinks" value="agua" />
+                              <span>Água</span>
+                            </label>
+                            <label class="drink-multiselect__option" role="option" aria-selected="false">
+                              <input type="checkbox" name="drinks" value="sumos" />
+                              <span>Sumos</span>
+                            </label>
+                            <label class="drink-multiselect__option" role="option" aria-selected="false">
+                              <input type="checkbox" name="drinks" value="cocktail-sem-alcool" />
+                              <span>Cocktail sem álcool</span>
+                            </label>
+                          </div>
+                        </div>
+                        <small class="drink-select-help">Clique para abrir a lista e selecionar uma ou várias opções.</small>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="drinkMessage"
+                          >Notas / preferências especiais (opcional)</label
+                        >
+                        <textarea
+                          id="drinkMessage"
+                          name="message"
+                          placeholder="Ex.: prefiro bebida sem açúcar..."
+                        ></textarea>
+                      </div>
+                    </div>
+
+                    <button type="submit" class="submit drink-submit">
+                      <i data-lucide="send"></i>
+                      Enviar pedido
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Sistema de Upload de Fotos -->
+              <div
+                class="panel photo-box photo-box--premium panel--fotos-layout"
+                id="fotos"
+                aria-labelledby="fotos-heading"
+              >
+                <div>
+                  <h3 id="fotos-heading">
+                    <i data-lucide="camera" class="photo-icon" aria-hidden="true"></i>
+                    Galeria de Fotos
+                  </h3>
+                  <p>Partilha as tuas fotos deste dia especial connosco.</p>
+
                   <div class="upload-zone" id="uploadZone">
                     <i data-lucide="upload-cloud"></i>
-                    <h4>Arraste e solte as fotos aqui</h4>
-                    <p>ou clique para selecionar</p>
-                    <input type="file" id="photoInput" multiple accept="image/*" hidden>
-                    <button type="button" class="btn upload-btn" id="selectPhotosBtn">
-                      <i data-lucide="plus"></i>
+                    <h4>Envia as tuas fotos do casamento</h4>
+                    <p>Clica no botão abaixo para selecionar e enviar fotos diretamente</p>
+                    <button type="button" class="upload-btn" id="btnUploadFotos">
+                      <i data-lucide="image"></i>
                       Selecionar Fotos
                     </button>
+                    <div id="statusUpload" class="upload-status"></div>
                   </div>
-                </div>
 
-                <div class="photo-preview-area" id="photoPreviewArea" style="display: none;">
-                  <h4>Fotos Selecionadas</h4>
-                  <div class="photo-grid" id="photoGrid"></div>
-                  
-                  <div class="photo-form">
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="photoName">Seu Nome</label>
-                        <input type="text" id="photoName" name="photoName" required>
-                      </div>
+                  <div class="photo-gallery-info">
+                    <div class="info-item">
+                      <i data-lucide="image"></i>
+                      <span>Formatos aceites: JPG, PNG, HEIC</span>
                     </div>
-                    
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="photoEmail">Seu E-mail</label>
-                        <input type="email" id="photoEmail" name="photoEmail" required>
-                      </div>
+                    <div class="info-item">
+                      <i data-lucide="hard-drive"></i>
+                      <span>Tamanho máximo: 10MB por foto</span>
                     </div>
-
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="photoMessage">Mensagem (opcional)</label>
-                        <textarea id="photoMessage" name="photoMessage" 
-                                  placeholder="Deixe uma mensagem especial para os noivos..."></textarea>
-                      </div>
-                    </div>
-
-                    <div class="photo-actions">
-                      <button type="button" class="btn secondary" id="addMorePhotosBtn">
-                        <i data-lucide="plus"></i>
-                        Adicionar Mais Fotos
-                      </button>
-                      <button type="button" class="submit photo-submit" id="uploadPhotosBtn">
-                        <i data-lucide="upload"></i>
-                        Enviar Fotos
-                      </button>
+                    <div class="info-item">
+                      <i data-lucide="users"></i>
+                      <span>Máximo de 20 fotos por envio</span>
                     </div>
                   </div>
                 </div>
-
-                <div class="photo-gallery-info">
-                  <div class="info-item">
-                    <i data-lucide="image"></i>
-                    <span>Formatos aceites: JPG, PNG, HEIC</span>
-                  </div>
-                  <div class="info-item">
-                    <i data-lucide="hard-drive"></i>
-                    <span>Tamanho máximo: 10MB por foto</span>
-                  </div>
-                  <div class="info-item">
-                    <i data-lucide="users"></i>
-                    <span>Máximo de 20 fotos por envio</span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
@@ -846,7 +796,7 @@
       <footer class="premium-footer" aria-label="Rodapé do convite">
         <div class="container premium-footer__inner">
           <p class="premium-footer__line">
-            FEITO COM AMOR PARA CELEBRAR ESTE DIA INESQUECIVEL.
+            FEITO COM AMOR PARA CELEBRAR ESTE DIA INESQUECÍVEL.
           </p>
           <h3 class="premium-footer__names">
             Vânia <span aria-hidden="true">&amp;</span> Fabião
@@ -858,16 +808,16 @@
           </p>
           <p class="premium-footer__verse">1 CORINTIOS 13:13</p>
           <p class="premium-footer__closing">
-            Esperamos por ti para celebrarmos juntos este dia tao especial.
+            Esperamos por ti para celebrarmos juntos este dia tão especial.
           </p>
 
           <div class="premium-footer__credits">
             <p class="premium-footer__creator-label">Criado por</p>
-            <p class="premium-footer__creator-name">Agencia Criativa 360°</p>
+            <p class="premium-footer__creator-name">Agência Criativa 360°</p>
             <p class="premium-footer__copyright">
-              © 2026 Vania &amp; Fabiao. Todos os direitos reservados.
+              © 2026 Vânia &amp; Fabião. Todos os direitos reservados.
             </p>
-            <p class="premium-footer__music">Musica: "First Time" - Teeks</p>
+            <p class="premium-footer__music">Música: "First Time" - Teeks</p>
 
             <div class="premium-footer__signature">
               <p class="premium-footer__signature-label">Desenvolvido por</p>
@@ -912,7 +862,22 @@
             Av. Karl Marx Nº 1230A, Cidade de Maputo
           </p>
           <p class="artigos-modal__store-phone">843115680</p>
-          <a href="tel:+258843115680" class="artigos-modal__call-btn">Ligar</a>
+          <div class="artigos-modal__actions">
+            <a href="tel:+258843115680" class="artigos-modal__btn artigos-modal__btn--secondary">Ligar</a>
+            <a href="https://www.google.com/maps/search/?api=1&query=Casa+das+Loi%C3%A7as+Av.+Karl+Marx+1230A+Maputo" target="_blank" rel="noopener noreferrer" class="artigos-modal__btn artigos-modal__btn--primary">Ver no Mapa</a>
+          </div>
+        </div>
+
+        <div class="artigos-modal__store-card">
+          <h3 class="artigos-modal__store-name">Casa das Loiça do Zimpeto</h3>
+          <p class="artigos-modal__store-address">
+            1789 Avenida de Mocambique, Maputo 1789
+          </p>
+          <p class="artigos-modal__store-phone">820119422</p>
+          <div class="artigos-modal__actions">
+            <a href="tel:+258820119422" class="artigos-modal__btn artigos-modal__btn--secondary">Ligar</a>
+            <a href="https://www.google.com/maps?gs_lcrp=EgZjaHJvbWUqDQgBEC4YrwEYxwEYgAQyBggAEEUYOTINCAEQLhivARjHARiABDIICAIQABgWGB4yCAgDEAAYFhgeMgcIBBAAGO8FMgcIBRAAGO8FMgoIBhAAGIAEGKIE0gEINzU4NWowajeoAgCwAgA&um=1&ie=UTF-8&fb=1&gl=mz&sa=X&geocode=KaGjD0GukeYeMWa7bVlM8KFI&daddr=1789+Avenida+de+Mocambique,+Maputo+1789" target="_blank" rel="noopener noreferrer" class="artigos-modal__btn artigos-modal__btn--primary">Ver no Mapa</a>
+          </div>
         </div>
 
         <div class="artigos-modal__articles">
@@ -921,14 +886,6 @@
             <li>Disponível na Loja.</li>
           </ol>
         </div>
-
-        <a
-          href="https://www.google.com/maps/search/?api=1&query=Casa+das+Loi%C3%A7as+Av.+Karl+Marx+1230A+Maputo"
-          class="artigos-modal__map-btn"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Ver no Mapa</a
-        >
       </div>
     </div>
 

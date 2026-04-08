@@ -768,9 +768,7 @@ a:hover {
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 50%),
     rgba(212, 175, 55, 0.15);
   -webkit-backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   position: relative;
   box-shadow: 
     0 0 50px rgba(212, 175, 55, 0.4),
@@ -2391,25 +2389,25 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 /* ==========================================
-   SISTEMA DE PEDIDOS DE BEBIDAS - OTIMIZADO
+   SISTEMA DE PEDIDOS DE BEBIDAS - TEMA DOURADO
    ========================================== */
 
 .drink-box {
-  background: linear-gradient(135deg, rgba(46, 125, 50, 0.15) 0%, rgba(76, 175, 80, 0.15) 100%);
-  border: 2px solid rgba(76, 175, 80, 0.4);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(218, 165, 32, 0.15) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.4);
   position: relative;
   overflow: hidden;
   border-radius: 20px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(76, 175, 80, 0.2);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
   transition: all 0.4s ease;
 }
 
 .drink-box:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.3);
-  border-color: rgba(76, 175, 80, 0.6);
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
+  border-color: rgba(212, 175, 55, 0.6);
 }
 
 .drink-box::before {
@@ -2421,13 +2419,13 @@ body.hero-intro-in-view .sparkle-container {
   height: 200%;
   background: conic-gradient(from 0deg at 50% 50%, 
     transparent 0deg, 
-    rgba(76, 175, 80, 0.15) 45deg, 
+    rgba(212, 175, 55, 0.15) 45deg, 
     transparent 90deg, 
-    rgba(46, 125, 50, 0.15) 135deg, 
+    rgba(218, 165, 32, 0.15) 135deg, 
     transparent 180deg, 
-    rgba(76, 175, 80, 0.15) 225deg, 
+    rgba(212, 175, 55, 0.15) 225deg, 
     transparent 270deg, 
-    rgba(46, 125, 50, 0.15) 315deg, 
+    rgba(218, 165, 32, 0.15) 315deg, 
     transparent 360deg);
   animation: drinkRaysRotate 25s linear infinite;
   pointer-events: none;
@@ -2447,7 +2445,7 @@ body.hero-intro-in-view .sparkle-container {
   display: flex;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
-  text-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
 }
 
 .drink-box p {
@@ -2459,10 +2457,10 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .drink-icon {
-  color: #4CAF50;
+  color: #D4AF37;
   margin-right: 12px;
   font-size: 2rem;
-  filter: drop-shadow(0 2px 8px rgba(76, 175, 80, 0.4));
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4));
 }
 
 .drink-form {
@@ -2485,7 +2483,7 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 /* ==========================================
-   ESTADOS DE VALIDAÇÃO - SISTEMA DE BEBIDAS OTIMIZADO
+   ESTADOS DE VALIDAÇÃO - SISTEMA DE BEBIDAS DOURADO
    ========================================== */
 
 .drink-checkbox {
@@ -2493,7 +2491,7 @@ body.hero-intro-in-view .sparkle-container {
   align-items: center;
   padding: 15px;
   background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(76, 175, 80, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.4);
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2508,7 +2506,7 @@ body.hero-intro-in-view .sparkle-container {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
   transition: left 0.5s ease;
 }
 
@@ -2517,15 +2515,15 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .drink-checkbox:hover {
-  background: rgba(76, 175, 80, 0.15);
-  border-color: #4CAF50;
+  background: rgba(212, 175, 55, 0.15);
+  border-color: #D4AF37;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
 .drink-checkbox input[type="checkbox"] {
   margin-right: 10px;
-  accent-color: #4CAF50;
+  accent-color: #D4AF37;
   min-width: 18px;
   height: 18px;
   cursor: pointer;
@@ -2540,9 +2538,9 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .drink-checkbox input[type="checkbox"]:checked + span {
-  color: #4CAF50;
+  color: #D4AF37;
   font-weight: 600;
-  text-shadow: 0 1px 3px rgba(76, 175, 80, 0.3);
+  text-shadow: 0 1px 3px rgba(212, 175, 55, 0.3);
 }
 
 .drink-checkbox input[type="checkbox"]:checked ~ .checkmark {
@@ -2555,7 +2553,7 @@ body.hero-intro-in-view .sparkle-container {
   right: 12px;
   top: 50%;
   transform: translateY(-50%) scale(0);
-  color: #4CAF50;
+  color: #D4AF37;
   font-size: 14px;
   opacity: 0;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2621,7 +2619,7 @@ body.hero-intro-in-view .sparkle-container {
 .drink-form select,
 .drink-form textarea {
   background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(76, 175, 80, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.4);
   border-radius: 12px;
   padding: 15px;
   color: white;
@@ -2630,6 +2628,7 @@ body.hero-intro-in-view .sparkle-container {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .drink-form input[type="text"]:focus,
@@ -2637,9 +2636,9 @@ body.hero-intro-in-view .sparkle-container {
 .drink-form select:focus,
 .drink-form textarea:focus {
   outline: none;
-  border-color: #4CAF50;
-  background: rgba(76, 175, 80, 0.12);
-  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
+  border-color: #D4AF37;
+  background: rgba(212, 175, 55, 0.12);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
   transform: translateY(-1px);
 }
 
@@ -2673,7 +2672,7 @@ body.hero-intro-in-view .sparkle-container {
   align-items: center;
   padding: 18px 25px;
   background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(76, 175, 80, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.4);
   border-radius: 15px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -2690,7 +2689,7 @@ body.hero-intro-in-view .sparkle-container {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
   transition: left 0.5s ease;
 }
 
@@ -2699,30 +2698,30 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .contact-radio:hover {
-  background: rgba(76, 175, 80, 0.15);
+  background: rgba(212, 175, 55, 0.15);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
-  border-color: #4CAF50;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+  border-color: #D4AF37;
 }
 
 .contact-radio input[type="radio"] {
   margin-right: 12px;
-  accent-color: #4CAF50;
+  accent-color: #D4AF37;
   min-width: 18px;
   height: 18px;
   cursor: pointer;
 }
 
 .contact-radio input[type="radio"]:checked + i {
-  color: #4CAF50;
+  color: #D4AF37;
   transform: scale(1.1);
-  filter: drop-shadow(0 2px 8px rgba(76, 175, 80, 0.4));
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4));
 }
 
 .contact-radio input[type="radio"]:checked + i + span {
-  color: #4CAF50;
+  color: #D4AF37;
   font-weight: 600;
-  text-shadow: 0 1px 3px rgba(76, 175, 80, 0.3);
+  text-shadow: 0 1px 3px rgba(212, 175, 55, 0.3);
 }
 
 .contact-radio i {
@@ -2741,7 +2740,7 @@ body.hero-intro-in-view .sparkle-container {
 
 /* Botão submit otimizado */
 .drink-submit {
-  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
   color: white;
   border: none;
   padding: 18px 35px;
@@ -2757,7 +2756,7 @@ body.hero-intro-in-view .sparkle-container {
   position: relative;
   overflow: hidden;
   margin-top: 25px;
-  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
 .drink-submit::before {
@@ -2776,9 +2775,9 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .drink-submit:hover {
-  background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%);
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
 }
 
 .drink-submit:active {
@@ -2786,7 +2785,7 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .drink-submit.success {
-  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #FFD700 100%);
   animation: successPulse 0.6s ease;
 }
 
@@ -2841,6 +2840,7 @@ body.hero-intro-in-view .sparkle-container {
   font-size: 0.9rem;
   border: 1px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .photo-toast {
@@ -3142,25 +3142,25 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 /* ==========================================
-   SISTEMA DE GALERIA DE FOTOS - OTIMIZADO
+   SISTEMA DE GALERIA DE FOTOS - TEMA DOURADO
    ========================================== */
 
 .photo-box {
-  background: linear-gradient(135deg, rgba(156, 39, 176, 0.15) 0%, rgba(186, 104, 200, 0.15) 100%);
-  border: 2px solid rgba(186, 104, 200, 0.4);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.15) 0%, rgba(218, 165, 32, 0.15) 100%);
+  border: 2px solid rgba(212, 175, 55, 0.4);
   position: relative;
   overflow: hidden;
   border-radius: 20px;
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(156, 39, 176, 0.2);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.2);
   transition: all 0.4s ease;
 }
 
 .photo-box:hover {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(156, 39, 176, 0.3);
-  border-color: rgba(186, 104, 200, 0.6);
+  box-shadow: 0 12px 40px rgba(212, 175, 55, 0.3);
+  border-color: rgba(212, 175, 55, 0.6);
 }
 
 .photo-box::before {
@@ -3172,13 +3172,13 @@ body.hero-intro-in-view .sparkle-container {
   height: 200%;
   background: conic-gradient(from 0deg at 50% 50%, 
     transparent 0deg, 
-    rgba(186, 104, 200, 0.15) 45deg, 
+    rgba(212, 175, 55, 0.15) 45deg, 
     transparent 90deg, 
-    rgba(156, 39, 176, 0.15) 135deg, 
+    rgba(218, 165, 32, 0.15) 135deg, 
     transparent 180deg, 
-    rgba(186, 104, 200, 0.15) 225deg, 
+    rgba(212, 175, 55, 0.15) 225deg, 
     transparent 270deg, 
-    rgba(156, 39, 176, 0.15) 315deg, 
+    rgba(218, 165, 32, 0.15) 315deg, 
     transparent 360deg);
   animation: photoRaysRotate 30s linear infinite;
   pointer-events: none;
@@ -3198,7 +3198,7 @@ body.hero-intro-in-view .sparkle-container {
   display: flex;
   align-items: center;
   font-family: 'Montserrat', sans-serif;
-  text-shadow: 0 2px 10px rgba(156, 39, 176, 0.3);
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
 }
 
 .photo-box p {
@@ -3210,15 +3210,15 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .photo-icon {
-  color: #9C27B0;
+  color: #D4AF37;
   margin-right: 12px;
   font-size: 2rem;
-  filter: drop-shadow(0 2px 8px rgba(156, 39, 176, 0.4));
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4));
 }
 
 /* Upload Zone Ultra Otimizada */
 .upload-zone {
-  border: 3px dashed rgba(186, 104, 200, 0.6);
+  border: 3px dashed rgba(212, 175, 55, 0.6);
   border-radius: 20px;
   padding: 60px 40px;
   text-align: center;
@@ -3228,6 +3228,7 @@ body.hero-intro-in-view .sparkle-container {
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .upload-zone::before {
@@ -3237,7 +3238,7 @@ body.hero-intro-in-view .sparkle-container {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(186, 104, 200, 0.1) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -3248,17 +3249,17 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .upload-zone:hover {
-  border-color: #9C27B0;
-  background: rgba(156, 39, 176, 0.08);
+  border-color: #D4AF37;
+  background: rgba(212, 175, 55, 0.08);
   transform: translateY(-3px);
-  box-shadow: 0 15px 40px rgba(156, 39, 176, 0.25);
+  box-shadow: 0 15px 40px rgba(212, 175, 55, 0.25);
 }
 
 .upload-zone.dragover {
-  border-color: #9C27B0;
-  background: rgba(156, 39, 176, 0.12);
+  border-color: #D4AF37;
+  background: rgba(212, 175, 55, 0.12);
   transform: scale(1.02);
-  box-shadow: 0 20px 50px rgba(156, 39, 176, 0.35);
+  box-shadow: 0 20px 50px rgba(212, 175, 55, 0.35);
 }
 
 .upload-zone.dragover::before {
@@ -3273,11 +3274,11 @@ body.hero-intro-in-view .sparkle-container {
 
 .upload-zone i {
   font-size: 4.5rem;
-  color: #9C27B0;
+  color: #D4AF37;
   margin-bottom: 25px;
   display: block;
   animation: floatIcon 3s ease-in-out infinite;
-  filter: drop-shadow(0 4px 15px rgba(156, 39, 176, 0.4));
+  filter: drop-shadow(0 4px 15px rgba(212, 175, 55, 0.4));
 }
 
 @keyframes floatIcon {
@@ -3303,7 +3304,7 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .upload-btn {
-  background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
   color: white;
   border: none;
   padding: 18px 35px;
@@ -3318,7 +3319,7 @@ body.hero-intro-in-view .sparkle-container {
   font-size: 1.1rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
 .upload-btn::before {
@@ -3337,9 +3338,9 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .upload-btn:hover {
-  background: linear-gradient(135deg, #BA68C8 0%, #9C27B0 100%);
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%);
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(156, 39, 176, 0.4);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
 }
 
 /* Photo Preview Area Ultra Otimizada */
@@ -3348,10 +3349,10 @@ body.hero-intro-in-view .sparkle-container {
   padding: 35px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
-  border: 2px solid rgba(186, 104, 200, 0.3);
+  border: 2px solid rgba(212, 175, 55, 0.3);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  box-shadow: 0 8px 32px rgba(156, 39, 176, 0.15);
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.15);
   animation: slideUpPreview 0.5s ease-out;
 }
 
@@ -3386,7 +3387,7 @@ body.hero-intro-in-view .sparkle-container {
   padding: 15px;
   border-radius: 15px;
   background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(186, 104, 200, 0.2);
+  border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .photo-grid::-webkit-scrollbar {
@@ -3399,13 +3400,13 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .photo-grid::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, rgba(186, 104, 200, 0.6), rgba(156, 39, 176, 0.6));
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.6), rgba(218, 165, 32, 0.6));
   border-radius: 5px;
   transition: background 0.3s ease;
 }
 
 .photo-grid::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, rgba(186, 104, 200, 0.8), rgba(156, 39, 176, 0.8));
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.8), rgba(218, 165, 32, 0.8));
 }
 
 /* Photo Items Ultra Otimizados */
@@ -3415,7 +3416,7 @@ body.hero-intro-in-view .sparkle-container {
   border-radius: 15px;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.4);
-  border: 2px solid rgba(186, 104, 200, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.4);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: photoItemAppear 0.5s ease-out;
   cursor: pointer;
@@ -3433,9 +3434,9 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .photo-item:hover {
-  border-color: #9C27B0;
+  border-color: #D4AF37;
   transform: scale(1.08) rotate(1deg);
-  box-shadow: 0 12px 30px rgba(156, 39, 176, 0.5);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5);
   z-index: 10;
 }
 
@@ -3471,6 +3472,7 @@ body.hero-intro-in-view .sparkle-container {
   transform: scale(0.8);
   z-index: 15;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .photo-item:hover .photo-item-remove {
@@ -3495,6 +3497,7 @@ body.hero-intro-in-view .sparkle-container {
   transform: translateY(100%);
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .photo-item:hover .photo-info-overlay {
@@ -3521,14 +3524,14 @@ body.hero-intro-in-view .sparkle-container {
 .photo-form {
   margin-top: 30px;
   padding-top: 30px;
-  border-top: 2px solid rgba(186, 104, 200, 0.3);
+  border-top: 2px solid rgba(212, 175, 55, 0.3);
 }
 
 .photo-form input[type="text"],
 .photo-form input[type="email"],
 .photo-form textarea {
   background: rgba(255, 255, 255, 0.08);
-  border: 2px solid rgba(186, 104, 200, 0.4);
+  border: 2px solid rgba(212, 175, 55, 0.4);
   border-radius: 12px;
   padding: 18px;
   color: white;
@@ -3537,15 +3540,16 @@ body.hero-intro-in-view .sparkle-container {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .photo-form input[type="text"]:focus,
 .photo-form input[type="email"]:focus,
 .photo-form textarea:focus {
   outline: none;
-  border-color: #9C27B0;
-  background: rgba(156, 39, 176, 0.12);
-  box-shadow: 0 0 0 4px rgba(156, 39, 176, 0.2);
+  border-color: #D4AF37;
+  background: rgba(212, 175, 55, 0.12);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
   transform: translateY(-1px);
 }
 
@@ -3589,6 +3593,7 @@ body.hero-intro-in-view .sparkle-container {
   font-weight: 600;
   font-size: 1rem;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .photo-actions .btn.secondary:hover {
@@ -3599,7 +3604,7 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .photo-submit {
-  background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
   color: white;
   border: none;
   padding: 18px 35px;
@@ -3614,7 +3619,7 @@ body.hero-intro-in-view .sparkle-container {
   font-size: 1.1rem;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
 }
 
 .photo-submit::before {
@@ -3633,9 +3638,9 @@ body.hero-intro-in-view .sparkle-container {
 }
 
 .photo-submit:hover {
-  background: linear-gradient(135deg, #BA68C8 0%, #9C27B0 100%);
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%);
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(156, 39, 176, 0.4);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
 }
 
 .photo-submit.loading {
@@ -3672,11 +3677,11 @@ body.hero-intro-in-view .sparkle-container {
 
 .upload-progress-bar {
   height: 100%;
-  background: linear-gradient(90deg, #9C27B0, #BA68C8);
+  background: linear-gradient(90deg, #D4AF37, #B8860B);
   border-radius: 4px;
   width: 0%;
   transition: width 0.3s ease;
-  box-shadow: 0 0 15px rgba(156, 39, 176, 0.6);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
   position: relative;
   overflow: hidden;
 }
@@ -3712,24 +3717,25 @@ body.hero-intro-in-view .sparkle-container {
   padding: 18px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 12px;
-  border: 2px solid rgba(186, 104, 200, 0.2);
+  border: 2px solid rgba(212, 175, 55, 0.2);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: help;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .info-item:hover {
-  background: rgba(186, 104, 200, 0.1);
+  background: rgba(212, 175, 55, 0.1);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.25);
-  border-color: rgba(186, 104, 200, 0.4);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+  border-color: rgba(212, 175, 55, 0.4);
 }
 
 .info-item i {
-  color: #9C27B0;
+  color: #D4AF37;
   font-size: 1.4rem;
   flex-shrink: 0;
-  filter: drop-shadow(0 2px 8px rgba(156, 39, 176, 0.4));
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4));
 }
 
 .info-item span {
@@ -3742,20 +3748,31 @@ body.hero-intro-in-view .sparkle-container {
 
 /* Counter de fotos otimizado */
 .photo-counter {
-  background: linear-gradient(135deg, rgba(156, 39, 176, 0.2), rgba(186, 104, 200, 0.2));
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.2), rgba(218, 165, 32, 0.2));
   color: white;
   padding: 8px 16px;
   border-radius: 20px;
   font-size: 0.9rem;
   font-weight: 700;
   font-family: 'Montserrat', sans-serif;
-  border: 2px solid rgba(186, 104, 200, 0.4);
-  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.2);
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 /* Animação de raios para fotos */
 @keyframes photoRaysRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Animação de raios para bebidas */
+@keyframes drinkRaysRotate {
   from {
     transform: rotate(0deg);
   }
@@ -3769,11 +3786,11 @@ body.hero-intro-in-view .sparkle-container {
   position: fixed;
   top: 25px;
   right: 25px;
-  background: linear-gradient(135deg, rgba(76, 175, 80, 0.95) 0%, rgba(46, 125, 50, 0.95) 100%);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.95) 0%, rgba(218, 165, 32, 0.95) 100%);
   color: white;
   padding: 18px 25px;
   border-radius: 15px;
-  box-shadow: 0 10px 35px rgba(76, 175, 80, 0.4);
+  box-shadow: 0 10px 35px rgba(212, 175, 55, 0.4);
   z-index: 10001;
   opacity: 0;
   transform: translateX(120px);
@@ -3784,11 +3801,6 @@ body.hero-intro-in-view .sparkle-container {
   border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-}
-
-.photo-toast {
-  background: linear-gradient(135deg, rgba(156, 39, 176, 0.95) 0%, rgba(186, 104, 200, 0.95) 100%);
-  box-shadow: 0 10px 35px rgba(156, 39, 176, 0.4);
 }
 
 .drink-toast.show, .photo-toast.show {
@@ -3818,6 +3830,118 @@ body.hero-intro-in-view .sparkle-container {
 @keyframes toastIconBounce {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.2); }
+}
+
+/* ==========================================
+   AJUSTES FINAIS - HARMONIZAÇÃO DE CARDS
+   ========================================== */
+
+/* Espaçamento consistente entre cards */
+.gift-box > div,
+.drink-box > div,
+.photo-box > div {
+  padding: 30px;
+}
+
+/* Margem entre sistemas dentro do card de presentes */
+.drink-box,
+.photo-box {
+  margin-top: 25px;
+  border-top: 2px solid rgba(212, 175, 55, 0.3);
+  padding-top: 25px;
+}
+
+/* Títulos consistentes */
+.gift-box h3,
+.drink-box h3,
+.photo-box h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 10px rgba(212, 175, 55, 0.3);
+}
+
+/* Ícones consistentes */
+.gift-icon,
+.drink-icon,
+.photo-icon {
+  margin-right: 12px;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.4));
+}
+
+.gift-icon {
+  color: #D4AF37;
+}
+
+/* Botões consistentes */
+.presentes-lista-btn,
+.drink-submit,
+.photo-submit,
+.upload-btn {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8860B 100%);
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.3);
+}
+
+.presentes-lista-btn:hover,
+.drink-submit:hover,
+.photo-submit:hover,
+.upload-btn:hover {
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+}
+
+/* Formulários consistentes */
+.drink-form input[type="text"],
+.drink-form input[type="email"],
+.drink-form select,
+.drink-form textarea,
+.photo-form input[type="text"],
+.photo-form input[type="email"],
+.photo-form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(212, 175, 55, 0.4);
+  border-radius: 12px;
+  padding: 15px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.drink-form input[type="text"]:focus,
+.drink-form input[type="email"]:focus,
+.drink-form select:focus,
+.drink-form textarea:focus,
+.photo-form input[type="text"]:focus,
+.photo-form input[type="email"]:focus,
+.photo-form textarea:focus {
+  outline: none;
+  border-color: #D4AF37;
+  background: rgba(212, 175, 55, 0.12);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+  transform: translateY(-1px);
 }
 
 .photo-form {
@@ -5721,9 +5845,7 @@ section.love-section .lead {
 .venue-card:not(.venue-card--premium) {
   background: rgba(255, 255, 255, 0.95);
   -webkit-backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 20px;
   padding: 40px;
@@ -5942,9 +6064,7 @@ section.love-section .lead {
   padding: 25px;
   background: rgba(255, 255, 255, 0.6);
   -webkit-backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   border-radius: 18px;
   border: 1px solid rgba(212, 175, 55, 0.15);
   transition: all 0.3s ease;
@@ -6102,6 +6222,33 @@ section.love-section .lead {
 
 .rsvp-info-grid {
   margin-top: 0;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  grid-template-areas:
+    "rsvp right";
+  gap: 22px;
+  align-items: start;
+}
+
+.panel--rsvp-layout {
+  grid-area: rsvp;
+}
+
+.right-column-stack--layout {
+  grid-area: right;
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 22px;
+}
+
+/* .panel--fotos-layout: grid-area removido - card agora dentro da right-column-stack */
+
+.panel--presentes-layout,
+.panel--bebidas-layout {
+  height: auto;
 }
 
 .panel--rsvp {
@@ -6778,9 +6925,7 @@ select {
 .dresscode-card {
   background: rgba(255, 255, 255, 0.92);
   -webkit-backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 22px;
   padding: 36px 28px 32px;
@@ -7449,6 +7594,61 @@ select {
   color: #fff;
 }
 
+/* Botões de ação no card */
+.artigos-modal__actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.artigos-modal__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+}
+
+.artigos-modal__btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Botão primário - dourado sólido */
+.artigos-modal__btn--primary {
+  background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+  color: #fff;
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.35);
+  border: none;
+}
+
+.artigos-modal__btn--primary:hover {
+  background: linear-gradient(135deg, #B8941F 0%, #D4AF37 100%);
+  box-shadow: 0 10px 28px rgba(212, 175, 55, 0.45);
+}
+
+/* Botão secundário - outline branco */
+.artigos-modal__btn--secondary {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.artigos-modal__btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
 /* Articles section */
 .artigos-modal__articles {
   margin-bottom: 24px;
@@ -7538,5 +7738,752 @@ body.artigos-modal-open {
   .artigos-modal__map-btn {
     padding: 14px 20px;
     font-size: 0.82rem;
+  }
+
+  .artigos-modal__actions {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .artigos-modal__btn {
+    padding: 14px 20px;
+    font-size: 0.78rem;
+  }
+
+  .photo-box--premium .photo-gallery-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .photo-box--premium .info-item {
+    padding: 10px 12px;
+  }
+
+  .photo-box--premium .info-item span {
+    font-size: 0.75rem;
+  }
+}
+
+/* ==========================================
+   PREMIUM UPGRADE: GALERIA, PRESENTES, BEBIDAS
+   ========================================== */
+
+.journey--premium {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(212, 175, 55, 0.12), transparent 42%),
+    radial-gradient(circle at 88% 84%, rgba(212, 175, 55, 0.1), transparent 40%),
+    linear-gradient(180deg, #faf7f2 0%, #f6f1e9 100%);
+}
+
+.gallery-grid--premium {
+  gap: 24px;
+}
+
+.gallery-card--premium {
+  position: relative;
+  border-radius: 24px;
+  border: 1px solid rgba(212, 175, 55, 0.26);
+  box-shadow:
+    0 14px 34px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  transition: transform 0.36s ease, box-shadow 0.36s ease, border-color 0.3s ease;
+  overflow: hidden;
+}
+
+.gallery-card--premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.34) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gallery-card--premium:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 175, 55, 0.42);
+  box-shadow:
+    0 20px 46px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(212, 175, 55, 0.28) inset;
+}
+
+.gallery-card--premium img {
+  height: 460px;
+  transition: transform 0.6s ease;
+}
+
+.gallery-card--premium:hover img {
+  transform: scale(1.06);
+}
+
+.gallery-card--premium span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  padding: 18px 16px 20px;
+  font-size: clamp(1.8rem, 4vw, 2.25rem);
+  color: #fff;
+  background: transparent;
+  text-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+}
+
+.gift-box--premium {
+  border-radius: 28px;
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.98) 0%, rgba(252, 248, 240, 0.98) 60%, rgba(247, 239, 225, 0.94) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  box-shadow:
+    0 24px 52px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.9) inset;
+  position: relative;
+  overflow: hidden;
+}
+
+.gift-box--premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), var(--gold), rgba(212, 175, 55, 0.35), transparent);
+  pointer-events: none;
+}
+
+.gift-box--premium > div {
+  padding: 34px 28px;
+}
+
+.gift-box--premium h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+  font-size: clamp(1.45rem, 2.6vw, 1.75rem);
+  white-space: nowrap;
+}
+
+.gift-box--premium > div > p {
+  max-width: 500px;
+  font-size: 0.96rem;
+  line-height: 1.58;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gift-box--premium .presentes-detalhes {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.gift-box--premium .presentes-lista-btn {
+  margin-top: 8px;
+  min-width: 178px;
+}
+
+.drink-box--premium {
+  margin-top: 30px;
+  border-radius: 22px;
+  padding: 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(165deg, rgba(255, 253, 248, 0.98) 0%, rgba(255, 255, 255, 0.99) 45%, rgba(250, 247, 242, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    0 22px 48px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.75) inset,
+    0 0 80px rgba(212, 175, 55, 0.06);
+}
+
+.drink-box--premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), var(--gold), rgba(212, 175, 55, 0.35), transparent);
+  pointer-events: none;
+}
+
+.drink-box--premium > div {
+  padding: 26px 22px 22px;
+}
+
+.drink-box--premium h3,
+.drink-box--premium p,
+.drink-box--premium label {
+  color: var(--dark);
+}
+
+.drink-box--premium p {
+  margin-bottom: 14px;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+.drink-box--premium h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-family: 'Philosopher', serif;
+  font-size: clamp(1.6rem, 3vw, 1.9rem);
+  font-weight: 700;
+}
+
+.drink-box--premium h3 i,
+.drink-box--premium h3 svg {
+  flex: 0 0 auto;
+}
+
+.drink-box--premium > div > p {
+  margin-bottom: 18px;
+  max-width: 520px;
+}
+
+.drink-box--premium .drink-form {
+  margin-top: 6px;
+}
+
+.drink-box--premium .drink-form .form-row {
+  margin-bottom: 14px;
+}
+
+.drink-box--premium .drink-form .form-row:last-of-type {
+  margin-bottom: 0;
+}
+
+.drink-box--premium .drink-multiselect {
+  margin-top: 8px;
+}
+
+/* Card de Fotos Premium - Compacto */
+.photo-box--premium {
+  margin-top: 0;
+  border-radius: 22px;
+  padding: 0;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(165deg, rgba(255, 253, 248, 0.98) 0%, rgba(255, 255, 255, 0.99) 45%, rgba(250, 247, 242, 0.95) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow:
+    0 4px 6px rgba(0, 0, 0, 0.02),
+    0 22px 48px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(255, 255, 255, 0.75) inset,
+    0 0 80px rgba(212, 175, 55, 0.06);
+}
+
+.photo-box--premium::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.35), var(--gold), rgba(212, 175, 55, 0.35), transparent);
+  pointer-events: none;
+}
+
+.photo-box--premium > div {
+  padding: 20px 18px 18px;
+}
+
+.photo-box--premium h3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-family: 'Philosopher', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.7rem);
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.photo-box--premium h3 i,
+.photo-box--premium h3 svg {
+  flex: 0 0 auto;
+}
+
+.photo-box--premium > div > p {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  color: var(--text-light);
+}
+
+/* Upload zone compacta */
+.photo-box--premium .upload-zone {
+  border: 2px dashed rgba(212, 175, 55, 0.45);
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.6);
+  transition: all 0.3s ease;
+}
+
+.photo-box--premium .upload-zone:hover {
+  border-color: rgba(212, 175, 55, 0.7);
+  background: rgba(212, 175, 55, 0.06);
+}
+
+.photo-box--premium .upload-zone i {
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.photo-box--premium .upload-zone h4 {
+  color: var(--dark);
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Philosopher', serif;
+}
+
+.photo-box--premium .upload-zone p {
+  color: var(--text-light);
+  margin-bottom: 12px;
+  font-size: 0.82rem;
+}
+
+.photo-box--premium .upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #D4AF37 0%, #B8941F 100%);
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.photo-box--premium .upload-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+}
+
+/* Status de upload */
+.upload-status {
+  margin-top: 12px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  min-height: 20px;
+}
+
+.upload-status.success {
+  background: rgba(76, 175, 80, 0.15);
+  color: #2e7d32;
+  border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.upload-status.error {
+  background: rgba(244, 67, 54, 0.15);
+  color: #c62828;
+  border: 1px solid rgba(244, 67, 54, 0.3);
+}
+
+.upload-status.complete {
+  background: rgba(212, 175, 55, 0.15);
+  color: #b8941f;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  font-weight: 600;
+}
+
+/* Info grid compacto para tema claro */
+.photo-box--premium .photo-gallery-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.photo-box--premium .info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 12px;
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.photo-box--premium .info-item i {
+  color: var(--gold);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.photo-box--premium .info-item span {
+  color: var(--text-light);
+  font-size: 0.78rem;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.3;
+  font-weight: 500;
+}
+
+.drink-multiselect {
+  position: relative;
+}
+
+.drink-multiselect__trigger {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--dark);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.drink-multiselect__trigger:focus {
+  outline: none;
+  border-color: rgba(212, 175, 55, 0.62);
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+
+.drink-multiselect__trigger::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  margin-left: 12px;
+  border-right: 2px solid rgba(0, 0, 0, 0.45);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.45);
+  transform: rotate(45deg);
+  transition: transform 0.2s ease;
+}
+
+.drink-multiselect.is-open .drink-multiselect__trigger::after {
+  transform: rotate(-135deg);
+}
+
+.drink-multiselect__panel {
+  display: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% + 8px);
+  z-index: 5;
+  max-height: 240px;
+  overflow: auto;
+  padding: 8px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.98);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.12);
+}
+
+.drink-multiselect.is-open .drink-multiselect__panel {
+  display: grid;
+  gap: 6px;
+}
+
+.drink-multiselect__option {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+.drink-multiselect__option:hover {
+  border-color: rgba(212, 175, 55, 0.25);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.drink-multiselect__option.is-selected {
+  border-color: rgba(212, 175, 55, 0.55);
+  background: rgba(212, 175, 55, 0.12);
+}
+
+.drink-multiselect__option input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.drink-multiselect__option span {
+  color: var(--dark);
+  font-size: 0.92rem;
+}
+
+.drink-multiselect.validation-error .drink-multiselect__trigger {
+  border-color: rgba(196, 92, 92, 0.55);
+  box-shadow: 0 0 0 3px rgba(196, 92, 92, 0.12);
+}
+
+.drink-multiselect.validation-error {
+  padding: 10px;
+  border-radius: 16px;
+  border: 1px solid rgba(196, 92, 92, 0.35);
+  background: rgba(196, 92, 92, 0.06);
+}
+
+.drink-box--premium input[type="text"],
+.drink-box--premium textarea,
+.drink-box--premium select {
+  border-color: rgba(212, 175, 55, 0.22);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--dark);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.9rem;
+}
+
+.drink-box--premium input[type="text"]::placeholder,
+.drink-box--premium textarea::placeholder {
+  color: rgba(0, 0, 0, 0.42);
+}
+
+.drink-box--premium textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.drink-box--premium .drink-form .form-group {
+  margin-bottom: 12px;
+}
+
+.drink-box--premium .contact-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.drink-box--premium .contact-radio {
+  min-height: 46px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.drink-box--premium .drink-submit {
+  margin-top: 10px;
+  padding: 12px 18px;
+  border-radius: 14px;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+}
+
+.drink-box--premium .drink-submit {
+  width: 100%;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.drink-form--clean {
+  margin-top: 14px;
+}
+
+.drink-form--clean .form-row--two {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.drink-form--clean .drink-options--clean {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.drink-form--clean textarea {
+  min-height: 92px;
+}
+
+.drink-select-list {
+  min-height: 170px;
+  padding-right: 14px;
+}
+
+.drink-select-list {
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.drink-select-list:focus {
+  border-color: rgba(212, 175, 55, 0.62);
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.drink-select-list option {
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--dark);
+  padding: 8px 10px;
+  font-size: 0.9rem;
+}
+
+.drink-select-help {
+  display: block;
+  margin-top: 8px;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+/* ==========================================
+   BEAUTY POLISH - RSVP / PRESENTE / BEBIDAS
+   ========================================== */
+
+.rsvp-gifts .script-title {
+  letter-spacing: 0.01em;
+}
+
+.rsvp-gifts .rsvp-lead {
+  font-size: 1.02rem;
+  line-height: 1.72;
+}
+
+.panel--presentes-layout,
+.panel--bebidas-layout,
+.panel--fotos-layout {
+  border-radius: 26px;
+}
+
+.panel--presentes-layout,
+.panel--bebidas-layout {
+  position: relative;
+  overflow: hidden;
+}
+
+.panel--presentes-layout::after,
+.panel--bebidas-layout::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.gift-box--premium .presentes-lista-btn {
+  padding: 10px 22px;
+  border-radius: 999px;
+  letter-spacing: 0.12em;
+  font-size: 0.84rem;
+}
+
+.drink-box--premium h3 {
+  margin-bottom: 10px;
+}
+
+.drink-box--premium .drink-form label {
+  font-family: 'Philosopher', serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.72);
+}
+
+.drink-select-list {
+  min-height: 176px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    0 10px 26px rgba(0, 0, 0, 0.08);
+}
+
+.drink-select-list:focus {
+  border-color: rgba(212, 175, 55, 0.62);
+  box-shadow:
+    0 0 0 3px rgba(212, 175, 55, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+}
+
+.drink-select-list option {
+  background: rgba(255, 255, 255, 0.98);
+  color: var(--dark);
+}
+
+.drink-select-help {
+  font-size: 0.74rem;
+  opacity: 0.9;
+  color: rgba(0, 0, 0, 0.55);
+}
+
+@media (max-width: 980px) {
+  .panel--presentes-layout,
+  .panel--bebidas-layout,
+  .panel--fotos-layout {
+    border-radius: 22px;
+  }
+}
+
+@media (max-width: 980px) {
+  .rsvp-info-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "rsvp"
+      "right";
+    gap: 18px;
+  }
+
+  .right-column-stack--layout {
+    grid-template-rows: auto auto auto;
+    gap: 18px;
+  }
+
+  .drink-form--clean .form-row--two {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .drink-form--clean .drink-options--clean {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid--premium {
+    gap: 18px;
+  }
+
+  .gallery-card--premium img {
+    height: 380px;
+  }
+
+  .gift-box--premium > div {
+    padding: 28px 20px;
+  }
+
+  .drink-box--premium > div {
+    padding: 24px 18px 20px;
   }
 }
