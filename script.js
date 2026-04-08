@@ -244,7 +244,7 @@ class DrinkOrderSystem {
 
   sendOrder(data) {
     const message = this.formatMessage(data);
-    const whatsappNumber = '258877859121';
+    const whatsappNumber = '+258820883478';
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   }
@@ -430,12 +430,19 @@ class PhotoUploadSystem {
       {
         cloudName: 'dou5pba8u',
         uploadPreset: 'casamento_upload',
+        folder: 'casamentos/vania-fabiao',
         multiple: true,
         maxFiles: 20,
         clientAllowedFormats: ['jpg', 'jpeg', 'png', 'heic'],
         maxFileSize: 10000000, // 10MB
         sources: ['local', 'camera'],
         language: 'pt',
+        // Configurações de qualidade HD
+        transformation: {
+          quality: 'auto:best', // Melhor qualidade automática
+          fetch_format: 'auto', // Formato optimizado (WebP/AVIF quando suportado)
+          dpr: 'auto' // Pixel density automático para telas retina
+        },
         text: {
           'pt': {
             'or': 'ou',
@@ -510,7 +517,7 @@ class PhotoUploadSystem {
 
   sendNotification() {
     // Notificar noivos via WhatsApp
-    const whatsappNumber = '258877859121';
+    const whatsappNumber = '+258841854589';
     const message = `📸 *NOVAS FOTOS ENVIADAS - CASAMENTO* 📸
 
 Olá! Alguém acabou de enviar fotos para a galeria do casamento.
@@ -1521,143 +1528,5 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeModal();
     });
-  }
-  
-  // Botões de desenvolvimento (localhost only)
-  if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-    const devButtons = document.createElement('div');
-    devButtons.id = 'dev-buttons';
-    devButtons.style.cssText = `
-      position: fixed;
-      bottom: 100px;
-      right: 20px;
-      z-index: 9999;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    `;
-    
-    // Botão para ver dados RSVP
-    const rsvpBtn = document.createElement('button');
-    rsvpBtn.textContent = 'Ver RSVP';
-    rsvpBtn.style.cssText = `
-      background: #D4AF37;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 12px;
-    `;
-    rsvpBtn.onclick = () => {
-      const data = localStorage.getItem('weddingRSVP');
-      console.log('RSVP Data:', data ? JSON.parse(data) : 'Nenhum dado');
-      alert('Dados RSVP exibidos no console');
-    };
-    
-    // Botão para ver pedidos de bebidas
-    const drinksBtn = document.createElement('button');
-    drinksBtn.textContent = 'Ver Bebidas';
-    drinksBtn.style.cssText = `
-      background: #4CAF50;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 12px;
-    `;
-    drinksBtn.onclick = () => {
-      const data = localStorage.getItem('weddingDrinkOrders');
-      console.log('Drink Orders:', data ? JSON.parse(data) : 'Nenhum dado');
-      alert('Pedidos de bebidas exibidos no console');
-    };
-    
-    // Botão para exportar pedidos de bebidas
-    const exportDrinksBtn = document.createElement('button');
-    exportDrinksBtn.textContent = 'Exportar Bebidas';
-    exportDrinksBtn.style.cssText = `
-      background: #2E7D32;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 12px;
-    `;
-    exportDrinksBtn.onclick = () => {
-      if (window.drinkOrderSystem) {
-        window.drinkOrderSystem.exportDrinkOrders();
-      } else {
-        alert('Sistema de bebidas não encontrado');
-      }
-    };
-    
-    // Botão para ver uploads de fotos
-    const photosBtn = document.createElement('button');
-    photosBtn.textContent = 'Ver Fotos';
-    photosBtn.style.cssText = `
-      background: #9C27B0;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 12px;
-    `;
-    photosBtn.onclick = () => {
-      const data = localStorage.getItem('weddingPhotoSubmissions');
-      console.log('Photo Submissions:', data ? JSON.parse(data) : 'Nenhum dado');
-      alert('Submissões de fotos exibidas no console');
-    };
-    
-    // Botão para exportar fotos
-    const exportPhotosBtn = document.createElement('button');
-    exportPhotosBtn.textContent = 'Exportar Fotos';
-    exportPhotosBtn.style.cssText = `
-      background: #7B1FA2;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 12px;
-    `;
-    exportPhotosBtn.onclick = () => {
-      if (window.photoUploadSystem) {
-        window.photoUploadSystem.exportPhotoSubmissions();
-      } else {
-        alert('Sistema de fotos não encontrado');
-      }
-    };
-    
-    // Botão para limpar dados
-    const clearBtn = document.createElement('button');
-    clearBtn.textContent = 'Limpar Dados';
-    clearBtn.style.cssText = `
-      background: #f44336;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 12px;
-    `;
-    clearBtn.onclick = () => {
-      if (confirm('Limpar todos os dados?')) {
-        localStorage.removeItem('weddingRSVP');
-        localStorage.removeItem('weddingDrinkOrders');
-        localStorage.removeItem('weddingPhotoSubmissions');
-        alert('Dados limpos com sucesso');
-      }
-    };
-    
-    devButtons.appendChild(rsvpBtn);
-    devButtons.appendChild(drinksBtn);
-    devButtons.appendChild(exportDrinksBtn);
-    devButtons.appendChild(photosBtn);
-    devButtons.appendChild(exportPhotosBtn);
-    devButtons.appendChild(clearBtn);
-    document.body.appendChild(devButtons);
   }
 });
