@@ -768,7 +768,9 @@ a:hover {
     radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2), transparent 50%),
     rgba(212, 175, 55, 0.15);
   -webkit-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   position: relative;
   box-shadow: 
     0 0 50px rgba(212, 175, 55, 0.4),
@@ -2385,6 +2387,1572 @@ body.hero-intro-in-view .sparkle-container {
     flex-direction: column;
     gap: 20px;
     align-items: center;
+  }
+}
+
+/* ==========================================
+   SISTEMA DE PEDIDOS DE BEBIDAS - OTIMIZADO
+   ========================================== */
+
+.drink-box {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.15) 0%, rgba(76, 175, 80, 0.15) 100%);
+  border: 2px solid rgba(76, 175, 80, 0.4);
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(76, 175, 80, 0.2);
+  transition: all 0.4s ease;
+}
+
+.drink-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(76, 175, 80, 0.3);
+  border-color: rgba(76, 175, 80, 0.6);
+}
+
+.drink-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg at 50% 50%, 
+    transparent 0deg, 
+    rgba(76, 175, 80, 0.15) 45deg, 
+    transparent 90deg, 
+    rgba(46, 125, 50, 0.15) 135deg, 
+    transparent 180deg, 
+    rgba(76, 175, 80, 0.15) 225deg, 
+    transparent 270deg, 
+    rgba(46, 125, 50, 0.15) 315deg, 
+    transparent 360deg);
+  animation: drinkRaysRotate 25s linear infinite;
+  pointer-events: none;
+}
+
+.drink-box > div {
+  position: relative;
+  z-index: 2;
+  padding: 30px;
+}
+
+.drink-box h3 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 10px rgba(76, 175, 80, 0.3);
+}
+
+.drink-box p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.drink-icon {
+  color: #4CAF50;
+  margin-right: 12px;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(76, 175, 80, 0.4));
+}
+
+.drink-form {
+  margin-top: 25px;
+}
+
+.drink-form .form-row {
+  margin-bottom: 20px;
+}
+
+.drink-form .form-group {
+  width: 100%;
+}
+
+.drink-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* ==========================================
+   ESTADOS DE VALIDAÇÃO - SISTEMA DE BEBIDAS OTIMIZADO
+   ========================================== */
+
+.drink-checkbox {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(76, 175, 80, 0.4);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.drink-checkbox::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.drink-checkbox:hover::before {
+  left: 100%;
+}
+
+.drink-checkbox:hover {
+  background: rgba(76, 175, 80, 0.15);
+  border-color: #4CAF50;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.drink-checkbox input[type="checkbox"] {
+  margin-right: 10px;
+  accent-color: #4CAF50;
+  min-width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.drink-checkbox span {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.drink-checkbox input[type="checkbox"]:checked + span {
+  color: #4CAF50;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(76, 175, 80, 0.3);
+}
+
+.drink-checkbox input[type="checkbox"]:checked ~ .checkmark {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.checkmark {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%) scale(0);
+  color: #4CAF50;
+  font-size: 14px;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: bold;
+}
+
+/* Estados de erro otimizados */
+.drink-options.validation-error {
+  border: 2px solid #f44336;
+  background: rgba(244, 67, 54, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  animation: shakeError 0.5s ease-in-out;
+  box-shadow: 0 0 20px rgba(244, 67, 54, 0.3);
+}
+
+.field-error {
+  border-color: #f44336 !important;
+  background: rgba(244, 67, 54, 0.08) !important;
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2) !important;
+  animation: fieldErrorPulse 0.6s ease-in-out;
+}
+
+@keyframes fieldErrorPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+.field-error-message {
+  color: #f44336;
+  font-size: 0.85rem;
+  margin-top: 8px;
+  padding: 10px 15px;
+  background: rgba(244, 67, 54, 0.12);
+  border-radius: 8px;
+  border-left: 4px solid #f44336;
+  animation: slideDownError 0.3s ease-out;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(244, 67, 54, 0.2);
+}
+
+@keyframes shakeError {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+@keyframes slideDownError {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Formulário otimizado */
+.drink-form input[type="text"],
+.drink-form input[type="email"],
+.drink-form select,
+.drink-form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(76, 175, 80, 0.4);
+  border-radius: 12px;
+  padding: 15px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.drink-form input[type="text"]:focus,
+.drink-form input[type="email"]:focus,
+.drink-form select:focus,
+.drink-form textarea:focus {
+  outline: none;
+  border-color: #4CAF50;
+  background: rgba(76, 175, 80, 0.12);
+  box-shadow: 0 0 0 4px rgba(76, 175, 80, 0.2);
+  transform: translateY(-1px);
+}
+
+.drink-form input[type="text"]::placeholder,
+.drink-form input[type="email"]::placeholder,
+.drink-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.drink-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Radio buttons de contato otimizados */
+.contact-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.contact-radio {
+  display: flex;
+  align-items: center;
+  padding: 18px 25px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(76, 175, 80, 0.4);
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex: 1;
+  min-width: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-radio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(76, 175, 80, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-radio:hover::before {
+  left: 100%;
+}
+
+.contact-radio:hover {
+  background: rgba(76, 175, 80, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+  border-color: #4CAF50;
+}
+
+.contact-radio input[type="radio"] {
+  margin-right: 12px;
+  accent-color: #4CAF50;
+  min-width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.contact-radio input[type="radio"]:checked + i {
+  color: #4CAF50;
+  transform: scale(1.1);
+  filter: drop-shadow(0 2px 8px rgba(76, 175, 80, 0.4));
+}
+
+.contact-radio input[type="radio"]:checked + i + span {
+  color: #4CAF50;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(76, 175, 80, 0.3);
+}
+
+.contact-radio i {
+  margin-right: 10px;
+  transition: all 0.3s ease;
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.contact-radio span {
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Botão submit otimizado */
+.drink-submit {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  margin-top: 25px;
+  box-shadow: 0 6px 20px rgba(76, 175, 80, 0.3);
+}
+
+.drink-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.drink-submit:hover::before {
+  left: 100%;
+}
+
+.drink-submit:hover {
+  background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
+}
+
+.drink-submit:active {
+  transform: translateY(-1px);
+}
+
+.drink-submit.success {
+  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  animation: successPulse 0.6s ease;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.drink-submit.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.drink-submit.loading::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Melhorias no toast de notificação */
+.drink-toast, .photo-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.95) 0%, rgba(46, 125, 50, 0.95) 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+  z-index: 10001;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-width: 350px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.photo-toast {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.95) 0%, rgba(186, 104, 200, 0.95) 100%);
+  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.4);
+}
+
+.drink-toast.show, .photo-toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.drink-toast .toast-icon, .photo-toast .toast-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+  display: inline-block;
+  animation: toastIconBounce 0.5s ease;
+}
+
+.drink-toast .toast-title, .photo-toast .toast-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-size: 0.95rem;
+}
+
+.drink-toast .toast-message, .photo-toast .toast-message {
+  font-size: 0.8rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+@keyframes toastIconBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Animação de confetti */
+@keyframes confettiFall {
+  0% {
+    transform: translateY(-10px) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Responsive Design para Validação */
+@media (max-width: 768px) {
+  .drink-options {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  
+  .contact-options {
+    flex-direction: column;
+  }
+  
+  .drink-toast, .photo-toast {
+    right: 10px;
+    left: 10px;
+    max-width: none;
+    top: 10px;
+  }
+  
+  .field-error-message {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+/* Estados de foco melhorados */
+.drink-form input:focus:invalid,
+.drink-form textarea:focus:invalid {
+  border-color: #f44336;
+  box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.2);
+}
+
+.drink-form input:focus:valid,
+.drink-form textarea:focus:valid {
+  border-color: #4CAF50;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+}
+
+/* Tooltips personalizados */
+.drink-form [title] {
+  position: relative;
+  cursor: help;
+}
+
+.drink-form [title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-bottom: 5px;
+  animation: tooltipFadeIn 0.3s ease;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.contact-options {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.contact-radio {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(76, 175, 80, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.contact-radio:hover {
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.contact-radio input[type="radio"] {
+  margin-right: 8px;
+  accent-color: #4CAF50;
+}
+
+.contact-radio input[type="radio"]:checked {
+  accent-color: #4CAF50;
+}
+
+.contact-radio input[type="radio"]:checked + i {
+  color: #4CAF50;
+}
+
+.contact-radio input[type="radio"]:checked + i + span {
+  color: #4CAF50;
+  font-weight: 600;
+}
+
+.contact-radio i {
+  margin-right: 8px;
+  transition: color 0.3s ease;
+}
+
+.drink-submit {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.drink-submit:hover {
+  background: linear-gradient(135deg, #45a049 0%, #4CAF50 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+}
+
+@keyframes drinkRaysRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   SISTEMA DE UPLOAD DE FOTOS
+   ========================================== */
+
+.photo-box {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.1) 0%, rgba(186, 104, 200, 0.1) 100%);
+  border: 1px solid rgba(186, 104, 200, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg at 50% 50%, 
+    transparent 0deg, 
+    rgba(186, 104, 200, 0.1) 45deg, 
+    transparent 90deg, 
+    rgba(156, 39, 176, 0.1) 135deg, 
+    transparent 180deg, 
+    rgba(186, 104, 200, 0.1) 225deg, 
+    transparent 270deg, 
+    rgba(156, 39, 176, 0.1) 315deg, 
+    transparent 360deg);
+  animation: photoRaysRotate 30s linear infinite;
+}
+
+.photo-icon {
+  color: #9C27B0;
+  margin-right: 10px;
+}
+
+.photo-upload-area {
+  margin: 20px 0;
+}
+
+.upload-zone {
+  border: 2px dashed rgba(186, 104, 200, 0.5);
+  border-radius: 15px;
+  padding: 40px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.02);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.upload-zone:hover {
+  border-color: #9C27B0;
+  background: rgba(156, 39, 176, 0.05);
+}
+
+.upload-zone.dragover {
+  border-color: #9C27B0;
+  background: rgba(156, 39, 176, 0.1);
+  transform: scale(1.02);
+}
+
+.upload-zone i {
+  font-size: 3rem;
+  color: #9C27B0;
+  margin-bottom: 15px;
+}
+
+.upload-zone h4 {
+  color: white;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.upload-zone p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(135deg, #BA68C8 0%, #9C27B0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.4);
+}
+
+.photo-preview-area {
+  margin: 20px 0;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(186, 104, 200, 0.3);
+}
+
+.photo-preview-area h4 {
+  color: white;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+/* ==========================================
+   SISTEMA DE GALERIA DE FOTOS - OTIMIZADO
+   ========================================== */
+
+.photo-box {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.15) 0%, rgba(186, 104, 200, 0.15) 100%);
+  border: 2px solid rgba(186, 104, 200, 0.4);
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(156, 39, 176, 0.2);
+  transition: all 0.4s ease;
+}
+
+.photo-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(156, 39, 176, 0.3);
+  border-color: rgba(186, 104, 200, 0.6);
+}
+
+.photo-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg at 50% 50%, 
+    transparent 0deg, 
+    rgba(186, 104, 200, 0.15) 45deg, 
+    transparent 90deg, 
+    rgba(156, 39, 176, 0.15) 135deg, 
+    transparent 180deg, 
+    rgba(186, 104, 200, 0.15) 225deg, 
+    transparent 270deg, 
+    rgba(156, 39, 176, 0.15) 315deg, 
+    transparent 360deg);
+  animation: photoRaysRotate 30s linear infinite;
+  pointer-events: none;
+}
+
+.photo-box > div {
+  position: relative;
+  z-index: 2;
+  padding: 30px;
+}
+
+.photo-box h3 {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 10px rgba(156, 39, 176, 0.3);
+}
+
+.photo-box p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.photo-icon {
+  color: #9C27B0;
+  margin-right: 12px;
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 8px rgba(156, 39, 176, 0.4));
+}
+
+/* Upload Zone Ultra Otimizada */
+.upload-zone {
+  border: 3px dashed rgba(186, 104, 200, 0.6);
+  border-radius: 20px;
+  padding: 60px 40px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+}
+
+.upload-zone::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(186, 104, 200, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.upload-zone:hover::before {
+  opacity: 1;
+}
+
+.upload-zone:hover {
+  border-color: #9C27B0;
+  background: rgba(156, 39, 176, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(156, 39, 176, 0.25);
+}
+
+.upload-zone.dragover {
+  border-color: #9C27B0;
+  background: rgba(156, 39, 176, 0.12);
+  transform: scale(1.02);
+  box-shadow: 0 20px 50px rgba(156, 39, 176, 0.35);
+}
+
+.upload-zone.dragover::before {
+  opacity: 1;
+  animation: pulseDragover 2s ease-in-out infinite;
+}
+
+@keyframes pulseDragover {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.upload-zone i {
+  font-size: 4.5rem;
+  color: #9C27B0;
+  margin-bottom: 25px;
+  display: block;
+  animation: floatIcon 3s ease-in-out infinite;
+  filter: drop-shadow(0 4px 15px rgba(156, 39, 176, 0.4));
+}
+
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.upload-zone h4 {
+  color: white;
+  margin-bottom: 12px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.upload-zone p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+.upload-btn {
+  background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
+}
+
+.upload-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.upload-btn:hover::before {
+  left: 100%;
+}
+
+.upload-btn:hover {
+  background: linear-gradient(135deg, #BA68C8 0%, #9C27B0 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(156, 39, 176, 0.4);
+}
+
+/* Photo Preview Area Ultra Otimizada */
+.photo-preview-area {
+  margin: 35px 0;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border: 2px solid rgba(186, 104, 200, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(156, 39, 176, 0.15);
+  animation: slideUpPreview 0.5s ease-out;
+}
+
+@keyframes slideUpPreview {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.photo-preview-area h4 {
+  color: white;
+  margin-bottom: 25px;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 18px;
+  margin-bottom: 30px;
+  max-height: 450px;
+  overflow-y: auto;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(186, 104, 200, 0.2);
+}
+
+.photo-grid::-webkit-scrollbar {
+  width: 10px;
+}
+
+.photo-grid::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
+
+.photo-grid::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(186, 104, 200, 0.6), rgba(156, 39, 176, 0.6));
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+.photo-grid::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, rgba(186, 104, 200, 0.8), rgba(156, 39, 176, 0.8));
+}
+
+/* Photo Items Ultra Otimizados */
+.photo-item {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: 15px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(186, 104, 200, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: photoItemAppear 0.5s ease-out;
+  cursor: pointer;
+}
+
+@keyframes photoItemAppear {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(-8deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+.photo-item:hover {
+  border-color: #9C27B0;
+  transform: scale(1.08) rotate(1deg);
+  box-shadow: 0 12px 30px rgba(156, 39, 176, 0.5);
+  z-index: 10;
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.photo-item:hover img {
+  transform: scale(1.15);
+}
+
+.photo-item-remove {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(244, 67, 54, 0.95);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: scale(0.8);
+  z-index: 15;
+  backdrop-filter: blur(10px);
+}
+
+.photo-item:hover .photo-item-remove {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.photo-item-remove:hover {
+  background: #F44336;
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(244, 67, 54, 0.6);
+}
+
+.photo-info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: white;
+  padding: 12px;
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+}
+
+.photo-item:hover .photo-info-overlay {
+  transform: translateY(0);
+}
+
+.photo-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 3px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.photo-size {
+  font-size: 0.65rem;
+  opacity: 0.8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Formulário de Fotos Ultra Otimizado */
+.photo-form {
+  margin-top: 30px;
+  padding-top: 30px;
+  border-top: 2px solid rgba(186, 104, 200, 0.3);
+}
+
+.photo-form input[type="text"],
+.photo-form input[type="email"],
+.photo-form textarea {
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(186, 104, 200, 0.4);
+  border-radius: 12px;
+  padding: 18px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+  backdrop-filter: blur(10px);
+}
+
+.photo-form input[type="text"]:focus,
+.photo-form input[type="email"]:focus,
+.photo-form textarea:focus {
+  outline: none;
+  border-color: #9C27B0;
+  background: rgba(156, 39, 176, 0.12);
+  box-shadow: 0 0 0 4px rgba(156, 39, 176, 0.2);
+  transform: translateY(-1px);
+}
+
+.photo-form input[type="text"]::placeholder,
+.photo-form input[type="email"]::placeholder,
+.photo-form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  font-style: italic;
+}
+
+.photo-form label {
+  display: block;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Photo Actions Ultra Otimizadas */
+.photo-actions {
+  display: flex;
+  gap: 18px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.photo-actions .btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 18px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+.photo-actions .btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.photo-submit {
+  background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(156, 39, 176, 0.3);
+}
+
+.photo-submit::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.photo-submit:hover::before {
+  left: 100%;
+}
+
+.photo-submit:hover {
+  background: linear-gradient(135deg, #BA68C8 0%, #9C27B0 100%);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(156, 39, 176, 0.4);
+}
+
+.photo-submit.loading {
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+.photo-submit.loading::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+/* Progress Bar Ultra Otimizada */
+.upload-progress-container {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 25px 0;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.upload-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #9C27B0, #BA68C8);
+  border-radius: 4px;
+  width: 0%;
+  transition: width 0.3s ease;
+  box-shadow: 0 0 15px rgba(156, 39, 176, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: progressShimmer 2s infinite;
+}
+
+@keyframes progressShimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* Photo Gallery Info Ultra Otimizada */
+.photo-gallery-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  border: 2px solid rgba(186, 104, 200, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: help;
+  backdrop-filter: blur(10px);
+}
+
+.info-item:hover {
+  background: rgba(186, 104, 200, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.25);
+  border-color: rgba(186, 104, 200, 0.4);
+}
+
+.info-item i {
+  color: #9C27B0;
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 8px rgba(156, 39, 176, 0.4));
+}
+
+.info-item span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Counter de fotos otimizado */
+.photo-counter {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.2), rgba(186, 104, 200, 0.2));
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  border: 2px solid rgba(186, 104, 200, 0.4);
+  box-shadow: 0 4px 15px rgba(156, 39, 176, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Animação de raios para fotos */
+@keyframes photoRaysRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toast notifications otimizadas */
+.drink-toast, .photo-toast {
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.95) 0%, rgba(46, 125, 50, 0.95) 100%);
+  color: white;
+  padding: 18px 25px;
+  border-radius: 15px;
+  box-shadow: 0 10px 35px rgba(76, 175, 80, 0.4);
+  z-index: 10001;
+  opacity: 0;
+  transform: translateX(120px);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-width: 380px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.photo-toast {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.95) 0%, rgba(186, 104, 200, 0.95) 100%);
+  box-shadow: 0 10px 35px rgba(156, 39, 176, 0.4);
+}
+
+.drink-toast.show, .photo-toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.drink-toast .toast-icon, .photo-toast .toast-icon {
+  margin-right: 12px;
+  font-size: 1.3rem;
+  display: inline-block;
+  animation: toastIconBounce 0.5s ease;
+}
+
+.drink-toast .toast-title, .photo-toast .toast-title {
+  font-weight: 700;
+  margin-bottom: 3px;
+  font-size: 1rem;
+}
+
+.drink-toast .toast-message, .photo-toast .toast-message {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+@keyframes toastIconBounce {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+.photo-form {
+  margin-top: 20px;
+}
+
+.photo-actions {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.photo-actions .btn.secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.photo-actions .btn.secondary:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.photo-submit {
+  background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 100%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.photo-submit:hover {
+  background: linear-gradient(135deg, #BA68C8 0%, #9C27B0 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.4);
+}
+
+.photo-gallery-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(186, 104, 200, 0.2);
+}
+
+.info-item i {
+  color: #9C27B0;
+  font-size: 1.2rem;
+}
+
+.info-item span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+}
+
+@keyframes photoRaysRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   TOAST NOTIFICATIONS PARA NOVOS SISTEMAS
+   ========================================== */
+
+.drink-toast, .photo-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, rgba(76, 175, 80, 0.95) 0%, rgba(46, 125, 50, 0.95) 100%);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
+  z-index: 10001;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  max-width: 350px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.photo-toast {
+  background: linear-gradient(135deg, rgba(156, 39, 176, 0.95) 0%, rgba(186, 104, 200, 0.95) 100%);
+  box-shadow: 0 8px 25px rgba(156, 39, 176, 0.4);
+}
+
+.drink-toast.show, .photo-toast.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.drink-toast .toast-icon, .photo-toast .toast-icon {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.drink-toast .toast-title, .photo-toast .toast-title {
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.drink-toast .toast-message, .photo-toast .toast-message {
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+/* Responsive Design para Novos Sistemas */
+@media (max-width: 768px) {
+  .drink-options {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  
+  .contact-options {
+    flex-direction: column;
+  }
+  
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  }
+  
+  .photo-gallery-info {
+    grid-template-columns: 1fr;
+  }
+  
+  .photo-actions {
+    flex-direction: column;
   }
 }
 
@@ -4153,7 +5721,9 @@ section.love-section .lead {
 .venue-card:not(.venue-card--premium) {
   background: rgba(255, 255, 255, 0.95);
   -webkit-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(212, 175, 55, 0.3);
   border-radius: 20px;
   padding: 40px;
@@ -4372,7 +5942,9 @@ section.love-section .lead {
   padding: 25px;
   background: rgba(255, 255, 255, 0.6);
   -webkit-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 18px;
   border: 1px solid rgba(212, 175, 55, 0.15);
   transition: all 0.3s ease;
@@ -5206,7 +6778,9 @@ select {
 .dresscode-card {
   background: rgba(255, 255, 255, 0.92);
   -webkit-backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border: 1px solid rgba(212, 175, 55, 0.2);
   border-radius: 22px;
   padding: 36px 28px 32px;

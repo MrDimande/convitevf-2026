@@ -634,6 +634,211 @@
                 </button>
               </div>
             </div>
+
+            <div
+              class="panel drink-box"
+              id="bebidas"
+              aria-labelledby="bebidas-heading"
+            >
+              <div>
+                <h3 id="bebidas-heading">
+                  <i
+                    data-lucide="wine"
+                    class="drink-icon"
+                    aria-hidden="true"
+                  ></i>
+                  Pedidos de Bebidas
+                </h3>
+                <p>
+                  Para garantir que todos aproveitem a celebração, 
+                  pedimos que nos informem sobre as suas preferências de bebidas.
+                </p>
+                <form id="drinkOrderForm" class="drink-form">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="drinkName">Nome Completo</label>
+                      <input type="text" id="drinkName" name="drinkName" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Preferências de Bebidas</label>
+                      <div class="drink-options">
+                        <label class="drink-checkbox">
+                          <input type="checkbox" name="drinks" value="vinho-tinto">
+                          <span>Vinho Tinto</span>
+                        </label>
+                        <label class="drink-checkbox">
+                          <input type="checkbox" name="drinks" value="vinho-branco">
+                          <span>Vinho Branco</span>
+                        </label>
+                        <label class="drink-checkbox">
+                          <input type="checkbox" name="drinks" value="cerveja">
+                          <span>Cerveja</span>
+                        </label>
+                        <label class="drink-checkbox">
+                          <input type="checkbox" name="drinks" value="espumante">
+                          <span>Espumante</span>
+                        </label>
+                        <label class="drink-checkbox">
+                          <input type="checkbox" name="drinks" value="refrigerante">
+                          <span>Refrigerante</span>
+                        </label>
+                        <label class="drink-checkbox">
+                          <input type="checkbox" name="drinks" value="agua">
+                          <span>Água</span>
+                        </label>
+                        <label class="drink-checkbox">
+                          <input type="checkbox" name="drinks" value="sumo-natural">
+                          <span>Sumo Natural</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="drinkQuantity">Quantidade aproximada por pessoa</label>
+                      <select id="drinkQuantity" name="drinkQuantity">
+                        <option value="1-2">1-2 bebidas</option>
+                        <option value="3-4">3-4 bebidas</option>
+                        <option value="5-6">5-6 bebidas</option>
+                        <option value="mais-6">Mais de 6 bebidas</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="drinkRestrictions">Restrições ou Preferências Especiais</label>
+                      <textarea id="drinkRestrictions" name="drinkRestrictions" 
+                                placeholder="Ex: Alergias, preferências sem álcool, etc."></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label>Como prefere enviar?</label>
+                      <div class="contact-options">
+                        <label class="contact-radio">
+                          <input type="radio" name="contactMethod" value="whatsapp" checked>
+                          <i data-lucide="message-circle"></i>
+                          <span>WhatsApp</span>
+                        </label>
+                        <label class="contact-radio">
+                          <input type="radio" name="contactMethod" value="email">
+                          <i data-lucide="mail"></i>
+                          <span>E-mail</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="contactInfo">Contato (WhatsApp/E-mail)</label>
+                      <input type="text" id="contactInfo" name="contactInfo" 
+                             placeholder="+258 8X XXX XXXX ou seu@email.com" required>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="submit drink-submit">
+                    <i data-lucide="send"></i>
+                    Enviar Pedido
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <div
+              class="panel photo-box"
+              id="fotos"
+              aria-labelledby="fotos-heading"
+            >
+              <div>
+                <h3 id="fotos-heading">
+                  <i
+                    data-lucide="camera"
+                    class="photo-icon"
+                    aria-hidden="true"
+                  ></i>
+                  Galeria de Fotos do Casamento
+                </h3>
+                <p>
+                  Partilhe as suas fotos especiais deste dia! 
+                  Todas as imagens serão compiladas na nossa galeria de memórias.
+                </p>
+                
+                <div class="photo-upload-area" id="photoUploadArea">
+                  <div class="upload-zone" id="uploadZone">
+                    <i data-lucide="upload-cloud"></i>
+                    <h4>Arraste e solte as fotos aqui</h4>
+                    <p>ou clique para selecionar</p>
+                    <input type="file" id="photoInput" multiple accept="image/*" hidden>
+                    <button type="button" class="btn upload-btn" id="selectPhotosBtn">
+                      <i data-lucide="plus"></i>
+                      Selecionar Fotos
+                    </button>
+                  </div>
+                </div>
+
+                <div class="photo-preview-area" id="photoPreviewArea" style="display: none;">
+                  <h4>Fotos Selecionadas</h4>
+                  <div class="photo-grid" id="photoGrid"></div>
+                  
+                  <div class="photo-form">
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="photoName">Seu Nome</label>
+                        <input type="text" id="photoName" name="photoName" required>
+                      </div>
+                    </div>
+                    
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="photoEmail">Seu E-mail</label>
+                        <input type="email" id="photoEmail" name="photoEmail" required>
+                      </div>
+                    </div>
+
+                    <div class="form-row">
+                      <div class="form-group">
+                        <label for="photoMessage">Mensagem (opcional)</label>
+                        <textarea id="photoMessage" name="photoMessage" 
+                                  placeholder="Deixe uma mensagem especial para os noivos..."></textarea>
+                      </div>
+                    </div>
+
+                    <div class="photo-actions">
+                      <button type="button" class="btn secondary" id="addMorePhotosBtn">
+                        <i data-lucide="plus"></i>
+                        Adicionar Mais Fotos
+                      </button>
+                      <button type="button" class="submit photo-submit" id="uploadPhotosBtn">
+                        <i data-lucide="upload"></i>
+                        Enviar Fotos
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="photo-gallery-info">
+                  <div class="info-item">
+                    <i data-lucide="image"></i>
+                    <span>Formatos aceites: JPG, PNG, HEIC</span>
+                  </div>
+                  <div class="info-item">
+                    <i data-lucide="hard-drive"></i>
+                    <span>Tamanho máximo: 10MB por foto</span>
+                  </div>
+                  <div class="info-item">
+                    <i data-lucide="users"></i>
+                    <span>Máximo de 20 fotos por envio</span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
