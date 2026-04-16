@@ -1385,7 +1385,7 @@ function initConviteMapEmbed() {
   mapEl.innerHTML =
     '<div class="map-content">' +
     '<iframe title="Salão de Eventos Evelyn, Maputo" src="https://maps.google.com/maps?q=' + q + '&z=16&output=embed" ' +
-    'style="border:0;width:100%;height:100%;min-height:360px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
+    'style="border:0;width:100%;height:100%;min-height:450px" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
     '</div>';
 
   conviteMapScale = 1;
