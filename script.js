@@ -593,7 +593,7 @@ class WeddingAudio {
 
   init() {
     // Verificar se estamos na capa ou no convite
-    const isCapa = window.location.pathname.includes('capa.html');
+    const isCapa = this.isCoverPage();
     const isConvite = window.location.pathname.includes('convite.html');
     
     // Debugging
@@ -663,6 +663,11 @@ class WeddingAudio {
     setTimeout(() => {
       this.playMusic(true);
     }, 90);
+  }
+
+  isCoverPage() {
+    const path = (window.location.pathname || '/').toLowerCase();
+    return path.endsWith('/') || path.endsWith('/index.html') || path.endsWith('/capa.html');
   }
 
   setupAudioToggle() {
@@ -1539,7 +1544,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.weddingAudio = new WeddingAudio();
   window.weddingAudio.init();
 
-  const isCapa = window.location.pathname.includes('capa.html');
+  const isCapa = window.weddingAudio.isCoverPage();
   const isConvite = window.location.pathname.includes('convite.html');
 
   initCountdown();

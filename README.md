@@ -34,7 +34,7 @@
 
 ```
 convitefv/
-├── 📄 capa.html              # Landing page com contagem regressiva
+├── 📄 index.html             # Landing page com contagem regressiva
 ├── 📄 convite.html          # Página principal completa
 ├── 🎨 style.css            # Design system premium (CSS 178KB)
 ├── ⚡ script.js            # Lógica interactiva (JS 52KB)
@@ -47,7 +47,7 @@ convitefv/
 
 ```
 ┌─────────────┐     ┌─────────────────────────────────────────┐
-│  capa.html  │────▶│              convite.html               │
+│ index.html  │────▶│              convite.html               │
 │  (Landing)  │     │  • Capa Editorial                       │
 │             │     │  • Versículo Bíblico                    │
 └─────────────┘     │  • Secção dos Noivos                     │
@@ -175,7 +175,7 @@ const COUPLE_NAMES = {
 #### 2. Data do Evento
 
 ```javascript
-// capa.html & convite.html
+// index.html & convite.html
 const WEDDING_DATE = new Date('2026-05-09T10:30:00');
 ```
 
@@ -225,7 +225,7 @@ const WHATSAPP_NUMBER = '+258XXXXXXXXX';
 ### Otimizações Aplicadas
 
 - ✅ Imagens com lazy loading e decoding async
-- ✅ CSS crítico inline (para capa.html)
+- ✅ CSS crítico inline (para index.html)
 - ✅ Fontes pré-carregadas com `preload`
 - ✅ Assets comprimidos (Gzip/Brotli)
 - ✅ Intersection Observer para animações
