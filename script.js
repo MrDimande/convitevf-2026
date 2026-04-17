@@ -581,11 +581,19 @@ class WeddingAudio {
     this.audio = document.getElementById('bgMusic');
     this.audioToggle = document.getElementById('audioToggle');
     this.isPlaying = false;
+    this.hasStarted = false;
+    this.pendingStartFlag = 'wedding_autoplay_pending';
+    this.currentSong = {
+      title: 'First Time',
+      artist: 'Teeks'
+    };
+    this.audioContext = null;
+    this.audioNodes = null;
   }
 
   init() {
     // Verificar se estamos na capa ou no convite
-    const isCapa = window.location.pathname.includes('capa.html');
+    const isCapa = this.isCoverPage();
     const isConvite = window.location.pathname.includes('convite.html');
     
     // Debugging
@@ -624,52 +632,42 @@ class WeddingAudio {
     if (openInviteBtn) {
       openInviteBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        
-        // Iniciar música automaticamente (apenas na primeira vez)
-        if (!this.hasStarted) {
-          this.playMusic(true); // true = auto-play
-          this.hasStarted = true;
+
+        // Marca intenção de autoplay para o próximo carregamento do convite.
+        try {
+          sessionStorage.setItem(this.pendingStartFlag, '1');
+        } catch (storageError) {
+          console.warn('🎵 Não foi possível salvar estado de autoplay:', storageError);
         }
-        
-        // Mostrar toast indicador
-        this.showMusicToast();
-        
-        // Navegar para o convite após um breve delay
-        setTimeout(() => {
-          window.location.href = 'convite.html';
-        }, 300);
+
+        window.location.href = 'convite.html?music=started';
       });
     }
   }
 
   setupConviteBehavior() {
-    // Verificar se a música já foi iniciada na capa
+    // Verificar se o utilizador veio da capa e clicou em "Ver convite"
     const urlParams = new URLSearchParams(window.location.search);
     const musicStarted = urlParams.get('music') === 'started';
-    
-    // TOCAR IMEDIATAMENTE ao entrar no convite, independente de qualquer coisa
-    console.log('🎵 Convite aberto - iniciando música imediatamente');
-    
-    // Delay mínimo para garantir que o DOM está pronto
-    setTimeout(() => {
-      if (!this.hasStarted) {
-        this.playMusic(true); // true = auto-play
-        this.hasStarted = true;
-        this.showMusicToast();
-      }
-    }, 100); // Reduzido para 100ms para tocar mais rápido
-    
-    // Se veio da capa com música já iniciada, continuar
-    if (musicStarted && !this.hasStarted) {
-      console.log('🎵 Música veio da capa - continuando reprodução');
-      setTimeout(() => {
-        if (!this.hasStarted) {
-          this.playMusic(true);
-          this.hasStarted = true;
-          this.showMusicToast();
-        }
-      }, 100);
+    let sessionPending = false;
+    try {
+      sessionPending = sessionStorage.getItem(this.pendingStartFlag) === '1';
+    } catch (storageError) {
+      console.warn('🎵 Não foi possível ler estado de autoplay:', storageError);
     }
+
+    const shouldAutoStart = musicStarted || sessionPending;
+    if (!shouldAutoStart || this.hasStarted) return;
+
+    console.log('🎵 Convite aberto após clique na capa - iniciando música');
+    setTimeout(() => {
+      this.playMusic(true);
+    }, 90);
+  }
+
+  isCoverPage() {
+    const path = (window.location.pathname || '/').toLowerCase();
+    return path.endsWith('/') || path.endsWith('/index.html') || path.endsWith('/capa.html');
   }
 
   setupAudioToggle() {
@@ -697,7 +695,7 @@ class WeddingAudio {
         return;
       }
 
-      const targetVolume = window.location.pathname.includes('convite.html') ? 0.42 : 1;
+      const targetVolume = window.location.pathname.includes('convite.html') ? 0.35 : 0.5;
       
       // Debugging - verificar se arquivo carrega
       console.log('🎵 Tentando reproduzir áudio...');
@@ -750,7 +748,9 @@ class WeddingAudio {
         await this.audio.play();
       }
 
-      this.audio.volume = targetVolume;
+      this.setupAudioProcessing();
+      this.audio.volume = 0.06;
+      this.fadeToVolume(targetVolume, 1200);
       
       this.isPlaying = true;
       this.hasStarted = true;
@@ -763,6 +763,11 @@ class WeddingAudio {
         const url = new URL(window.location);
         url.searchParams.set('music', 'started');
         window.history.replaceState({}, '', url);
+        try {
+          sessionStorage.removeItem(this.pendingStartFlag);
+        } catch (storageError) {
+          console.warn('🎵 Não foi possível limpar estado de autoplay:', storageError);
+        }
       }
       
       console.log('🎵 Música ' + (isAutoPlay ? 'iniciada automaticamente' : 'retomada') + ': ' + this.currentSong.title);
@@ -814,6 +819,64 @@ class WeddingAudio {
     this.isPlaying = false;
     this.updateToggleButton();
     console.log('⏸️ Música pausada');
+  }
+
+  setupAudioProcessing() {
+    if (!this.audio || this.audioNodes) return;
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+
+    try {
+      this.audioContext = this.audioContext || new AudioContextClass();
+      if (this.audioContext.state === 'suspended') {
+        this.audioContext.resume().catch(() => {});
+      }
+
+      const source = this.audioContext.createMediaElementSource(this.audio);
+      const lowShelf = this.audioContext.createBiquadFilter();
+      lowShelf.type = 'lowshelf';
+      lowShelf.frequency.value = 220;
+      lowShelf.gain.value = 1.6;
+
+      const highShelf = this.audioContext.createBiquadFilter();
+      highShelf.type = 'highshelf';
+      highShelf.frequency.value = 5000;
+      highShelf.gain.value = 1.2;
+
+      const compressor = this.audioContext.createDynamicsCompressor();
+      compressor.threshold.value = -24;
+      compressor.knee.value = 28;
+      compressor.ratio.value = 3;
+      compressor.attack.value = 0.01;
+      compressor.release.value = 0.22;
+
+      source.connect(lowShelf);
+      lowShelf.connect(highShelf);
+      highShelf.connect(compressor);
+      compressor.connect(this.audioContext.destination);
+
+      this.audioNodes = { source, lowShelf, highShelf, compressor };
+    } catch (err) {
+      // Silencioso: fallback para reprodução normal caso o browser bloqueie o WebAudio.
+      this.audioNodes = null;
+    }
+  }
+
+  fadeToVolume(target, durationMs) {
+    if (!this.audio) return;
+    const start = this.audio.volume;
+    const delta = target - start;
+    const startAt = performance.now();
+
+    const step = (now) => {
+      const t = Math.min(1, (now - startAt) / durationMs);
+      this.audio.volume = Math.max(0, Math.min(1, start + delta * t));
+      if (t < 1 && !this.audio.paused) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
   }
 
   updateToggleButton() {
@@ -1479,8 +1542,9 @@ function initHeroIntroAmbientDim() {
 // Inicialização principal
 document.addEventListener('DOMContentLoaded', () => {
   window.weddingAudio = new WeddingAudio();
+  window.weddingAudio.init();
 
-  const isCapa = window.location.pathname.includes('capa.html');
+  const isCapa = window.weddingAudio.isCoverPage();
   const isConvite = window.location.pathname.includes('convite.html');
 
   initCountdown();
